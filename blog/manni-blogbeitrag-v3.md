@@ -1,9 +1,9 @@
 ---
-title: "manni: wenn die Doku beweisen muss, dass sie noch stimmt"
+title: "manni: Wenn die Doku beweisen muss, dass sie noch stimmt"
 description: "Ein CLI-Werkzeugkasten für prüfbare Softwaredokumentation: Metadaten gegen JSON Schema, Sätze gegen Quellzeilen, Seiten gegen axe-core."
 ---
 
-# manni: wenn die Doku beweisen muss, dass sie noch stimmt
+# Wenn die Doku beweisen muss, dass sie noch stimmt
 
 In jeder Docs-as-Code-Pipeline, die ich kenne, gibt es einen blinden Fleck. [Vale](https://vale.sh/) prüft Sprache gegen einen Styleguide. Der Linkchecker prüft Verweise. Der Build prüft, ob die Seite rendert. [Doc Detective](https://docs.doc-detective.com/) prüft, ob sich das Produkt so verhält, wie es beschrieben ist. Und keiner von ihnen merkt, dass der Standardwert für das Fetch-Timeout vor drei Sprints von 10 auf 30 Sekunden gestiegen ist, während auf Seite 9 der API-Doku weiterhin 10 steht.
 
@@ -11,7 +11,7 @@ Das Problem ist weder neu noch anekdotisch. Die Software-Engineering-Forschung u
 
 Diese Lücke ist der Grund, warum [manni](https://hawkeyexl.github.io/manni/) einen Blick wert ist.
 
-## Was manni ist
+## Was kann ich mit manni lösen?
 
 `manni` ist eine Familie von Kommandozeilenwerkzeugen für Dokumentation, die geprüft werden soll. Ein npm-Paket, vier Werkzeuge, eine gemeinsame Konfigurationsdatei. Der Aufruf folgt immer demselben Muster:
 
