@@ -137,7 +137,7 @@ Nicht mit `cite` anfangen, sondern mit `meta`. Es läuft ohne Konfiguration gege
 
 Für `cite` würde ich einen Piloten wählen, der beantwortbar ist: die zehn bis zwanzig Aussagen, die in den letzten zwei Jahren am häufigsten falsch waren. Meist sind das Zahlen. Wenn nach einem Quartal die Zahl der echten Befunde die Zahl der reinen Pin-Reparaturen übersteigt, hat sich der Aufwand gelohnt. Wenn nicht, löscht man zwanzig Einträge und hat nichts verloren.
 
-Der eigentliche Gewinn ist ohnehin kein Werkzeug, sondern eine Verschiebung der Beweislast. Bisher muss jemand bemerken, dass die Doku falsch ist. Danach muss die Doku zeigen, dass sie noch stimmt.
+Der eigentliche Gewinn ist ohnehin kein Werkzeug, sondern eine Verschiebung der Beweislast. Bisher muss jemand feststellen, dass die Doku falsch ist. Mit diesen neuen Audit-Tools muss die Doku zeigen, dass sie inhaltlich noch stimmt.
 
 ---
 
