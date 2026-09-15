@@ -125,7 +125,7 @@ Die Werkzeuge beantworten verschiedene Fragen, und keine davon wird von den übl
 
 Drei Einwände, bevor jemand das in eine produktive Pipeline hebt.
 
-**Reifegrad.** Die Familie ist neu. Das erste Release des Pakets liegt im September 2026, das [Repository](https://github.com/hawkeyexl/manni) hat einen einzigen Maintainer und noch praktisch keine externe Nutzerbasis. Nur `meta` bringt als früheres `docmeta` echte Historie mit; `cite`, `a11y` und `key` sind wenige Wochen alt. Die Entwicklung ist erkennbar stark agentengestützt, mit einem Proposal-Dokument pro größerer Änderung. Das ist ungewöhnlich gut nachvollziehbar dokumentiert, ersetzt aber keine Betriebserfahrung. Version pinnen, nicht gegen `latest` bauen.
+**Reifegrad.** Das Toolkit ist neu. Das erste Release des Pakets liegt im September 2026, das [Repository](https://github.com/hawkeyexl/manni) hat einen einzigen Maintainer und noch praktisch keine externe Nutzerbasis. Nur `meta` bringt als früheres `docmeta` echte Historie mit; `cite`, `a11y` und `key` sind wenige Wochen alt. Die Entwicklung ist erkennbar stark agentengestützt, mit einem Proposal-Dokument pro größerer Änderung. Das ist ungewöhnlich gut nachvollziehbar dokumentiert, ersetzt aber keine Betriebserfahrung. Version pinnen, nicht gegen `latest` bauen.
 
 **Pflegeaufwand.** Ein Zitat ist eine Zusage. Jede gepinnte Aussage will bei jedem Refactoring bestätigt oder neu gesetzt werden. Wer 800 Sätze pinnt, hat 800 potenzielle Befunde. Das skaliert nur mit Auswahl: Grenzwerte, Standardwerte, Fehlercodes, Versionsangaben, Endpunktnamen. Konzeptuelle Prosa gehört nicht dazu.
 
