@@ -114,7 +114,7 @@ Die Werkzeuge beantworten verschiedene Fragen, und keine davon wird von den übl
 |---|---|
 | Ist die Sprache regelkonform? | [Vale](https://vale.sh/) |
 | Verhält sich das Produkt wie beschrieben? | [Doc Detective](https://docs.doc-detective.com/) |
-| Trägt die Seite die Metadaten, die die Pipeline braucht? | [`manni meta`](https://hawkeyexl.github.io/manni/meta/) |
+| Verfügt die Seite über alle Metadaten, die die Pipeline braucht? | [`manni meta`](https://hawkeyexl.github.io/manni/meta/) |
 | Gilt der Satz über den Code noch? | [`manni cite`](https://hawkeyexl.github.io/manni/cite/) |
 | Ist die publizierte Seite barrierefrei? | [`manni a11y`](https://hawkeyexl.github.io/manni/a11y/) |
 | Bleiben die Quellpfade dabei privat? | [`manni key`](https://hawkeyexl.github.io/manni/key/) |
