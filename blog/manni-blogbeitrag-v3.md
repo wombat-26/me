@@ -1,6 +1,7 @@
 ---
 title: "manni: Wenn die Doku beweisen muss, dass sie noch stimmt"
 description: "Ein CLI-Werkzeugkasten für prüfbare Softwaredokumentation: Metadaten gegen JSON Schema, Sätze gegen Quellzeilen, Seiten gegen axe-core."
+author: Matthias Eckardt
 ---
 
 # Wenn die Doku beweisen muss, dass sie noch stimmt
