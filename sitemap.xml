@@ -6,7 +6,7 @@
 
     <!-- Main CV Page -->
     <url>
-        <loc>https://wombat-26.github.io/resume/</loc>
+        <loc>https://wombat-26.github.io/me/</loc>
         <lastmod>2026-04-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
     <!-- Portfolio Page -->
     <url>
-        <loc>https://wombat-26.github.io/resume/portfolio-page.html</loc>
+        <loc>https://wombat-26.github.io/me/portfolio-page.html</loc>
         <lastmod>2026-04-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
     <!-- German CV HTML File (filename typo corrected) -->
     <url>
-        <loc>https://wombat-26.github.io/resume/MatthiasEckardt-Lebenslauf-Aktualisiert.html</loc>
+        <loc>https://wombat-26.github.io/me/MatthiasEckardt-Lebenslauf-Aktualisiert.html</loc>
         <lastmod>2026-04-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
     <!-- English CV HTML File -->
     <url>
-        <loc>https://wombat-26.github.io/resume/cv-english.html</loc>
+        <loc>https://wombat-26.github.io/me/cv-english.html</loc>
         <lastmod>2026-04-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
