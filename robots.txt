@@ -1,19 +1,12 @@
+# Allow search engines to crawl the public site.
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://wombat-26.github.io/resume/sitemap.xml
+# Keep implementation and repository metadata out of search results.
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /_config.yml
+Disallow: /README.md
 
-# Allow all search engines to crawl the CV
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Crawl delay (optional - helps prevent server overload)
-Crawl-delay: 1
-
+# XML sitemap for the GitHub Pages site.
+Sitemap: https://wombat-26.github.io/me/sitemap.xml
