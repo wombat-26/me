@@ -63,6 +63,17 @@
     letter-spacing: -0.01em;
   }
 
+  .hero .title-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .hero .title-link:hover,
+  .hero .title-link:focus-visible {
+    color: var(--accent);
+  }
+
   .hero .tagline {
     font-size: 0.95rem;
     color: var(--text-secondary);
@@ -242,7 +253,7 @@
 
   <!-- Hero -->
   <div class="hero">
-    <h1>EintrachtHeute</h1>
+    <h1><a class="title-link" href="https://apps.apple.com/de/app/eintrachtheute/id6785388496" target="_blank" rel="noopener noreferrer" aria-label="EintrachtHeute im App Store öffnen">EintrachtHeute</a></h1>
     <p class="tagline">Support &amp; häufige Fragen</p>
     <p class="version">2024 – 2026 · Matthias Eckardt</p>
   </div>
@@ -297,7 +308,7 @@
 
     <details class="faq-item">
       <summary>Warum fehlt ein Spiel oder ein Ergebnis ist falsch?</summary>
-      <p class="faq-answer">Bei über 3.400 erfassten Spielen seit 1960 können einzelne historische Datensätze fehlerhaft oder unvollständig sein. Schreib uns gerne das Datum und die beiden Mannschaften und wir prüfen es.</p>
+      <p class="faq-answer">Bei über 3.400 erfassten Spielen seit 1960 können einzelne historische Datensätze fehlerhaft oder unvollständig sein. Schreib uns gerne das Datum und die beiden Mannschaften, damit wir das prüfen können.</p>
     </details>
 
     <details class="faq-item">
@@ -307,19 +318,19 @@
 
     <details class="faq-item">
       <summary>Wie aktiviere ich die tägliche Erinnerung?</summary>
-      <p class="faq-answer">Unter Einstellungen → Tägliche Erinnerung lässt sich die Benachrichtigung "Heute vor X Jahren" aktivieren. Uhrzeit, Filter nach Männer-/Frauen-Spielen sowie optionale Sound- und Sprachhinweise sind ebenfalls einstellbar.</p>
+      <p class="faq-answer">Unter Einstellungen → Tägliche Erinnerung lässt sich die Benachrichtigung "Heute vor X Jahren" aktivieren. Uhrzeit, Filter nach Männer-/Frauen-Spielen sowie optionale Benachrichtigungstexte sind dort konfigurierbar.</p>
     </details>
 
     <details class="faq-item">
       <summary>Funktioniert die App auch offline?</summary>
-      <p class="faq-answer">Der historische Spielkalender ist nach dem ersten Laden lokal gespeichert und auch offline nutzbar. Für aktuelle News und laufende Saison-Updates ist eine Internetverbindung nötig.</p>
+      <p class="faq-answer">Der historische Spielkalender ist nach dem ersten Laden lokal gespeichert und auch offline nutzbar. Für aktuelle News und laufende Saison-Updates ist eine Internetverbindung erforderlich.</p>
     </details>
   </div>
 
   <!-- Disclaimer -->
   <div class="card">
     <div class="disclaimer">
-      <p>Für Inhalte und Verlinkungen auf externen Seiten, die über den RSS-Newsfeed in der App angezeigt werden, wird keine Haftung übernommen. Die News-Inhalte stammen von Drittanbietern (z. B. offiziellen Vereinsseiten, Sportportalen oder Presseagenturen) und können sich ändern.</p>
+      <p>Für Inhalte und Verlinkungen auf externen Seiten, die über den RSS-Newsfeed in der App angezeigt werden, wird keine Haftung übernommen. Die News-Inhalte stammen von Drittanbietern (z. B. offiziellen Club-Quellen oder Medienberichten) und werden nur zur Information bereitgestellt.</p>
     </div>
   </div>
 
