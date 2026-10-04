@@ -50,11 +50,4 @@
         <priority>0.6</priority>
     </url>
 
-    <url>
-        <loc>https://wombat-26.github.io/me/airbus_ultra_dashboard.html</loc>
-        <lastmod>2026-09-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
 </urlset>
