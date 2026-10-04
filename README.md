@@ -1,11 +1,11 @@
 # Matthias Eckardt - Senior Technical Writer
 
-[![Live CV](https://img.shields.io/badge/Live%20CV-View%20Online-green?style=for-the-badge)](https://wombat-26.github.io/resume/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-View%20Projects-blue?style=for-the-badge)](https://wombat-26.github.io/resume/portfolio-page.html)
+[![Live CV](https://img.shields.io/badge/Live%20CV-View%20Online-green?style=for-the-badge)](https://wombat-26.github.io/me/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-View%20Projects-blue?style=for-the-badge)](https://wombat-26.github.io/me/portfolio-page.html)
 
 ## 🎯 About
 
-This repository contains my professional CV and portfolio, showcasing 14+ years of expertise in technical writing, API documentation, and developer experience. Currently working as a Senior Technic[...]
+This repository contains my professional CV and portfolio, showcasing 14+ years of expertise in technical writing, API documentation, and developer experience. Currently working as a Senior Technical Writer and Documentation Strategist, helping teams create clear, accessible, and user-centered documentation experiences.
 
 ## 🚀 Live CV
 
