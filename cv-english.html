@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthias Eckardt - Senior Technical Writer | CV</title>
     
-    <meta name="description" content="Senior Technical Writer with 15+ years of experience in enterprise SaaS, specializing in developer documentation, API documentation, and modern docs-as-code workflows. Available from August 2026.">
+    <meta name="description" content="Senior Technical Writer with over 11 years of experience in enterprise SaaS, specializing in developer documentation, API documentation, and modern docs-as-code workflows.">
     <meta name="author" content="Matthias Eckardt">
     <meta name="keywords" content="Senior Technical Writer, Documentation Strategy, Developer Experience, API Documentation, Docs-as-Code, SaaS, UX Writing, Technical Writing, Munich, Germany, Matthias Eckardt, Asciidoc, AI Expert, macOS Guru, remote work, Swift, SwiftUI, iOS Development, Xcode">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://wombat-26.github.io/me/cv-english.html" />
  
     <meta property="og:title" content="Matthias Eckardt - Senior Technical Writer | CV">
-    <meta property="og:description" content="Senior Technical Writer with 15+ years of experience specializing in developer documentation, API documentation, and docs-as-code workflows.">
+    <meta property="og:description" content="Senior Technical Writer with over 11 years of experience specializing in developer documentation, API documentation, and docs-as-code workflows.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wombat-26.github.io/me/cv-english.html">
     <meta property="og:locale" content="en_US">
@@ -263,6 +263,20 @@
             color: #444;
         }
         
+        .job-dept {
+            font-weight: 500;
+            color: #3d5a4f;
+        }
+
+        /* Several roles at the same employer */
+        .role {
+            margin-top: 12px;
+        }
+
+        .role + .role {
+            margin-top: 18px;
+        }
+
         /* Two columns */
         .two-columns {
             display: grid;
@@ -709,6 +723,54 @@
                 print-color-adjust: exact !important;
             }
         }
+
+        /*
+         * ATS FIX: CLEAN TEXT LAYER IN THE PDF
+         * Plus Jakarta Sans replaces ff/fi/ffi with ligature glyphs ("liga") and turns every
+         * hyphen after a digit into a minus sign ("calt"). Safari's PDF export writes these
+         * glyphs into the text layer incorrectly, so both features are off in print.
+         */
+        @media print {
+            body {
+                font-variant-ligatures: none !important;
+                font-feature-settings: "liga" 0, "clig" 0, "calt" 0 !important;
+            }
+
+            /*
+             * PAGE BREAKS
+             * Large blocks (sections, jobs, lists, columns) may break across pages so that no
+             * half-empty pages appear. Only small units stay together: list items, job headers,
+             * skill cards, education and language rows.
+             */
+            .section,
+            .professional-experience,
+            .experience-item,
+            .job-description,
+            .job-description ul,
+            ul, ol,
+            .skills-grid,
+            .two-columns,
+            .two-columns > div,
+            .two-columns .section {
+                page-break-inside: auto !important;
+                break-inside: auto !important;
+            }
+
+            li,
+            .job-header,
+            .skill-card,
+            .education-item,
+            .language-item {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .section-title,
+            .job-header {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -725,7 +787,7 @@
                     </div>
                     <div class="contact-item">
                         <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        +49 170-805-2141
+                        +49 170 8052141
                     </div>
                     <div class="contact-item">
                         <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -737,7 +799,7 @@
                     </div>
                     <div class="contact-item">
                         <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                        <a href="https://wombat-26.github.io/me/portfolio-page.html">Portfolio</a>
+                        <a href="https://wombat-26.github.io/me/portfolio-page.html">My Portfolio</a>
                     </div>
                 </div>
             </div>
@@ -748,7 +810,7 @@
             <div class="section">
                 <h2 class="section-title">Professional Summary</h2>
                 <p class="profile-text">
-                    Senior technical writer with 15+ years of experience in enterprise SaaS environments, specializing in developer documentation, API documentation, and docs-as-code strategies. Proven track record of shipping documentation for fast-growing companies and successfully testing products hands-on to ensure technical accuracy. Advanced knowledge in cross-functional collaboration with distributed teams and transforming traditional documentation into agile, scalable solutions. Available for a new position with immediate effect.
+                    Senior technical writer with over 11 years of experience in technical documentation, mostly in enterprise SaaS environments, specializing in developer documentation, API documentation, and docs-as-code strategies. Over 20 years of writing about technology overall, previously as a technical book author and editor. Proven track record of shipping documentation for fast-growing companies and successfully testing products hands-on to ensure technical accuracy. Advanced knowledge in cross-functional collaboration with distributed teams and transforming traditional documentation into agile, scalable solutions. Available for a new position with immediate effect.
                 </p>
             </div>
             
@@ -812,16 +874,16 @@
                 
                 <div class="experience-item">
                     <div class="job-header">
-                        <div class="company-name">Lobster GmbH</div>
-                        <div class="job-title">Senior Technical Writer</div>
+                        <div class="company-name">Lobster DATA GmbH</div>
+                        <div class="job-title">Senior Technical Writer <span class="job-dept">· Customer Education</span></div>
                         <div class="job-meta">Tutzing, Germany | February 2026 - July 2026</div>
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li><strong>Platform Documentation:</strong> Created and maintained English-language documentation for the Lobster Data Platform (iPaaS/enterprise integration), targeting experienced system and platform administrators.</li>
-                            <li><strong>Editorial Standards:</strong> Established the editorial style guide, the company terminology base, and a public-facing glossary as the shared reference for documentation, product, and support.</li>
                             <li><strong>Release Notes Automation:</strong> Published release notes programmatically through the Document360 API using Python, removing manual publishing steps from every release cycle.</li>
                             <li><strong>Localization Pilot:</strong> Set up and ran the pilot for Crowdin Enterprise, introducing AI-supported translation and a translation memory to the documentation workflow.</li>
+                            <li><strong>Editorial Standards:</strong> Established the editorial style guide, the company terminology base, and a public-facing glossary as the shared reference for documentation, product, and support.</li>
+                            <li><strong>Platform Documentation:</strong> Created and maintained English-language documentation for the Lobster Data Platform (iPaaS/enterprise integration), targeting experienced system and platform administrators.</li>
                             <li><strong>AI-Assisted Workflows:</strong> Integrated Claude Enterprise into daily documentation workflows to accelerate drafting, editing, and content review while upholding editorial and terminology standards.</li>
                         </ul>
                     </div>
@@ -829,37 +891,40 @@
                 
                 <div class="experience-item">
                     <div class="job-header">
-                        <div class="company-name">Uptempo.io</div>
-                        <div class="job-title">Senior Technical Writer</div>
-                        <div class="job-meta">Remote, Germany | April 2023 - October 2025</div>
+                        <div class="company-name">Uptempo GmbH (formerly BrandMaker)</div>
+                        <div class="job-meta">Remote, Germany | November 2021 - October 2025</div>
                     </div>
-                    <div class="job-description">
-                        <ul>
-                            <li><strong>API & Developer Experience:</strong> Engineered and maintained the public developer portal, creating comprehensive guides for REST APIs that directly improved developer onboarding and adoption.</li>
-                            <li><strong>Docs-as-Code Leadership:</strong> Championed and implemented company-wide docs-as-code practices, fully integrating documentation into the version control and CI/CD pipelines to match engineering workflows.</li>
-                            <li><strong>QA & Product Testing:</strong> Validated documentation accuracy by proactively testing every feature and API endpoint hands-on before release, acting as a critical quality gatekeeper.</li>
-                            <li><strong>Workflow Automation:</strong> Developed an automated API changelog generation system using Node.js and OpenAPI, reducing manual effort by 80% while significantly increasing accuracy.</li>
-                            <li><strong>Global Collaboration:</strong> Orchestrated cross-functional collaboration and asynchronous work with distributed teams across North America, Eastern Europe, and Asia, coordinating priorities across 8+ time zones to maintain rapid product release cycles.</li>
-                            <li><strong>Team Mentorship:</strong> Onboarded and mentored new technical writers and product managers, establishing scalable documentation standards and Vale-based style guides to ensure consistency.</li>
-                            <li><strong>AI-Assisted Documentation:</strong> Adopted Claude Enterprise across documentation workflows to speed up content creation, API guide drafting, and consistency checks against the Vale style guide.</li>
-                            <li><strong>Departure:</strong> Role concluded due to wider company restructuring in late 2025.</li>
-                        </ul>
+                    <div class="role">
+                        <div class="job-header">
+                            <div class="job-title">Senior Technical Writer <span class="job-dept">· Education and Enablement</span></div>
+                            <div class="job-meta">April 2023 - October 2025</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li><strong>Docs-as-Code Leadership:</strong> Championed and implemented company-wide docs-as-code practices, fully integrating documentation into the version control and CI/CD pipelines to match engineering workflows.</li>
+                                <li><strong>API & Developer Experience:</strong> Engineered and maintained the public developer portal, creating comprehensive guides for REST APIs that directly improved developer onboarding and adoption.</li>
+                                <li><strong>Workflow Automation:</strong> Developed an automated API changelog generation system using Node.js and OpenAPI, reducing manual effort by 80% while significantly increasing accuracy.</li>
+                                <li><strong>AI-Assisted Documentation:</strong> Adopted Claude Enterprise across documentation workflows to speed up content creation, API guide drafting, and consistency checks against the Vale style guide.</li>
+                                <li><strong>Team Mentorship:</strong> Onboarded and mentored new technical writers and product managers, establishing scalable documentation standards and Vale-based style guides to ensure consistency.</li>
+                                <li><strong>QA & Product Testing:</strong> Validated documentation accuracy by proactively testing every feature and API endpoint hands-on before release, acting as a critical quality gatekeeper.</li>
+                                <li><strong>Global Collaboration:</strong> Orchestrated cross-functional collaboration and asynchronous work with distributed teams across North America, Eastern Europe, and Asia, coordinating priorities across 8+ time zones to maintain rapid product release cycles.</li>
+                                <li><strong>Departure:</strong> Role concluded due to wider company restructuring in late 2025.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="company-name">BrandMaker (now Uptempo GmbH)</div>
-                        <div class="job-title">Technical Writer</div>
-                        <div class="job-meta">Remote, Germany | November 2021 - March 2023</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li><strong>Enterprise SaaS Documentation:</strong> Created in-depth technical documentation for complex marketing resource management (MRM) SaaS products, including BPMN workflows and Camunda engine integrations for developer audiences.</li>
-                            <li><strong>Global Team Management:</strong> Managed asynchronous workflows and documentation projects with distributed engineering teams across North America, Europe, and Asia, ensuring seamless knowledge transfer.</li>
-                            <li><strong>Content Optimization:</strong> Spearheaded the implementation of a UI key variables system in MadCap Flare, which improved translation quality and content consistency across global markets.</li>
-                            <li><strong>UX Collaboration:</strong> Collaborated with UX teams on copy optimization to enhance the user interface and overall product usability.</li>
-                        </ul>
+                    <div class="role">
+                        <div class="job-header">
+                            <div class="job-title">Technical Writer <span class="job-dept">· Product Management, later Education and Enablement</span></div>
+                            <div class="job-meta">November 2021 - March 2023</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li><strong>Enterprise SaaS Documentation:</strong> Created in-depth technical documentation for complex marketing resource management (MRM) SaaS products, including BPMN workflows and Camunda engine integrations for developer audiences.</li>
+                                <li><strong>Global Team Management:</strong> Managed asynchronous workflows and documentation projects with distributed engineering teams across North America, Europe, and Asia, ensuring seamless knowledge transfer.</li>
+                                <li><strong>Content Optimization:</strong> Spearheaded the implementation of a UI key variables system in MadCap Flare, which improved translation quality and content consistency across global markets.</li>
+                                <li><strong>UX Collaboration:</strong> Collaborated with UX teams on copy optimization to enhance the user interface and overall product usability.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
@@ -928,21 +993,6 @@
             <div class="section">
                 <h2 class="section-title">Additional Experience</h2>
                 <div class="experience-item">
-                    <div class="job-header">
-                        <div class="company-name">EintrachtHeute (Personal iOS App)</div>
-                        <div class="job-title">Solo Developer &amp; Publisher</div>
-                        <div class="job-meta">Munich, Germany | 2026 | <a href="https://apps.apple.com/th/app/eintrachtheute/id6785388496" style="color: #3d5a4f; font-weight: 600;">Published on the Apple App Store ↗</a></div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li><strong>Native iOS App:</strong> Designed, built, and shipped EintrachtHeute end-to-end with SwiftUI, SwiftData, WidgetKit, and Swift Charts under a paid Apple Developer membership, developed in Xcode using AI-assisted coding (Claude).</li>
-                            <li><strong>Data Engineering:</strong> Architected a three-tier data pipeline unifying a curated 3,548-match historical seed with live match data from OpenLigaDB and ESPN, keyed by a deterministic match ID generated identically in Swift and Python to eliminate duplicates.</li>
-                            <li><strong>Automation &amp; CI/CD:</strong> Built a GitHub Actions pipeline (Python, no external dependencies) that refreshes data three times daily and ships a compact manifest plus rolling window, delivering corrections to installed apps without an App Store update.</li>
-                            <li><strong>Data Integrity:</strong> Implemented provenance-based write rules with validation before and after each run, aborting on data loss and guarding against overlapping executions — favoring stale data over corrupted data.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="experience-item">
                      <div class="job-header">
                         <div class="company-name">MACup Magazine / Neue Mediengesellschaft Ulm</div>
                         <div class="job-title">Editor</div>
@@ -958,14 +1008,31 @@
                 </div>
             </div>
             
+            <div class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">EintrachtHeute <span class="job-dept">· App development with Xcode</span></div>
+                        <div class="job-meta">Summer 2026 | <a href="https://apps.apple.com/th/app/eintrachtheute/id6785388496" style="color: #3d5a4f; font-weight: 600;">Published on the Apple App Store ↗</a></div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>App covering the match history of Eintracht Frankfurt (men's and women's teams, 3,500+ matches since 1960) for iPhone, iPad, and Mac</li>
+                            <li>SwiftUI, SwiftData (matches, goals, sync status), Swift Charts, WidgetKit; data from OpenLigaDB, DFB, and ESPN, updated via GitHub Actions; match data: JSON; languages: DE/EN/FR/TR. With help from Claude.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
             <div class="two-columns">
                 <div>
                     <div class="section">
-                        <h2 class="section-title">Education & Certifications</h2>
+                        <h2 class="section-title">Education & Professional Development</h2>
                         
-                        <h3 style="font-size: 11pt; font-weight: 600; margin-bottom: 10px;">Professional Certifications (2023-2025)</h3>
+                        <h3 style="font-size: 11pt; font-weight: 600; margin-bottom: 4px;">Professional Development (2023-2025)</h3>
+                        <div class="job-meta" style="margin-top: 0; margin-bottom: 8px;">All courses via LinkedIn Learning</div>
                        <ul class="cert-list" style="margin-bottom: 20px;">
-<li>Vibe Coding Programmierpraxis: KI-Agenten mit Bolt und Cursor entwickeln (LinkedIn Learning, 2025)</li>
+<li>Vibe Coding Programmierpraxis: KI-Agenten mit Bolt und Cursor entwickeln (2025)</li>
 <li>AI-Driven Software Development with OpenAI Canvas (2025)</li>
 <li>The Power of Accurate Prompting with Anthropic Claude (2024)</li>
 <li>GitHub Actions with Python Fundamentals (2024)</li>
@@ -976,7 +1043,8 @@
  
                         <div class="education-item">
                             <div class="job-title" style="font-size: 11pt; font-weight: 600;">University education</div>
-                            <div class="job-meta">Ludwig Maximilian University Munich - Modern German Literature, English Studies</div>
+                            <div class="job-meta">Ludwig Maximilian University Munich - Modern German Literature, English Studies | 1993 - 1998</div>
+                            <div class="job-meta">Intermediate examinations passed, no degree</div>
                         </div>
                         <div class="education-item">
                             <div class="job-title" style="font-size: 11pt; font-weight: 600;">Vocational training</div>
