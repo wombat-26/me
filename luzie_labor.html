@@ -28,7 +28,7 @@ header p{font-size:12px;color:#8e8e93;margin-top:2px}
 .card-label{font-size:11px;color:#8e8e93;margin-bottom:2px}
 .card-val{font-size:20px;font-weight:600}
 .card-ref{font-size:10px;color:#8e8e93;margin-top:1px}
-.lo{color:#dc2626}.hi{color:#b45309}
+.lo{color:#dc2626}.hi{color:#b45309}.ok{color:#1d6abf}
 .chart{background:#fff;border-radius:10px;padding:10px 10px 4px;margin-bottom:8px;position:relative;user-select:none;-webkit-user-select:none}
 .chart-inner{position:relative;width:100%;height:200px;overflow:visible;padding-left:32px}
 .chart-svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;pointer-events:none}
@@ -67,7 +67,8 @@ tr:last-child td{border-bottom:none}
 
 <header>
   <h1>Luzie &ndash; Laborverlauf</h1>
-  <p>BKH, 16 J. &middot; CNE IRIS Stage 3 &middot; Renale An&auml;mie</p>
+  <p>BKH, 17 J. &middot; CNE IRIS Stage 3 &middot; Renale An&auml;mie</p>
+  <p>Letzter Befund 02.07.2026 &middot; Kleintierklinik LMU (eigene Referenzbereiche)</p>
 </header>
 
 <div class="tabs">
@@ -77,6 +78,7 @@ tr:last-child td{border-bottom:none}
   <button class="tab" onclick="showTab('elektro',this)">Elektrolyte</button>
   <button class="tab" onclick="showTab('urin',this)">Urin</button>
   <button class="tab" onclick="showTab('gas',this)">Blutgas</button>
+  <button class="tab" onclick="showTab('weitere',this)">Weitere Werte</button>
 </div>
 
 <div class="legend">
@@ -87,9 +89,9 @@ tr:last-child td{border-bottom:none}
 
 <div id="panel-anamie" class="panel active">
   <div class="cards">
-    <div class="card"><div class="card-label">Hkt 31.03.</div><div class="card-val lo">0,238</div><div class="card-ref">Ref 0,28&ndash;0,53</div></div>
-    <div class="card"><div class="card-label">Hgb 31.03.</div><div class="card-val lo">78 g/L</div><div class="card-ref">Ref 103&ndash;162</div></div>
-    <div class="card"><div class="card-label">RBC 31.03.</div><div class="card-val lo">5,51</div><div class="card-ref">Ref 7,1&ndash;11,5</div></div>
+    <div class="card"><div class="card-label">Hkt 02.07.</div><div class="card-val ok">0,41</div><div class="card-ref">Ref 0,30&ndash;0,52</div></div>
+    <div class="card"><div class="card-label">Hgb 02.07.</div><div class="card-val ok">119 g/L</div><div class="card-ref">Ref 98&ndash;162</div></div>
+    <div class="card"><div class="card-label">RBC 02.07.</div><div class="card-val ok">10,08</div><div class="card-ref">Ref 6,54&ndash;12,2</div></div>
   </div>
   <div id="chart-anamie"></div>
   <div class="note">Hkt &times;10, Hgb &divide;10 zur gemeinsamen Darstellung skaliert</div>
@@ -97,20 +99,20 @@ tr:last-child td{border-bottom:none}
 
 <div id="panel-retik" class="panel">
   <div class="cards2">
-    <div class="card"><div class="card-label">Ret-Hb 31.03.</div><div class="card-val lo">11,8 pg</div><div class="card-ref">Ref 15,3&ndash;22,9</div></div>
-    <div class="card"><div class="card-label">Retik 31.03.</div><div class="card-val hi">33 K/&micro;L</div><div class="card-ref">Ziel &gt;50 bei An&auml;mie</div></div>
+    <div class="card"><div class="card-label">Ret-Hb 02.07.</div><div class="card-val ok">14,0 pg</div><div class="card-ref">Ref 13,2&ndash;20,8</div></div>
+    <div class="card"><div class="card-label">Retik 02.07.</div><div class="card-val ok">26,2 K/&micro;L</div><div class="card-ref">Ref 3&ndash;50</div></div>
   </div>
   <div id="chart-retik"></div>
-  <div class="note">Ret-Hb &darr; trotz Darbepoetin &rarr; funkt. Eisenmangel</div>
+  <div class="note">31.03.: Ret-Hb &darr; trotz Darbepoetin &rarr; funkt. Eisenmangel</div>
 </div>
 
 <div id="panel-niere" class="panel">
   <div class="cards2">
     <div class="card"><div class="card-label">SDMA 31.03.</div><div class="card-val hi">33 &micro;g/dL</div><div class="card-ref">Ref 0&ndash;14</div></div>
-    <div class="card"><div class="card-label">Kreatinin 31.03.</div><div class="card-val hi">274 &micro;mol/L</div><div class="card-ref">Ref 80&ndash;203</div></div>
+    <div class="card"><div class="card-label">Kreatinin 02.07.</div><div class="card-val hi">256 &micro;mol/L</div><div class="card-ref">Ref 0&ndash;169</div></div>
   </div>
   <div id="chart-niere"></div>
-  <div class="note">Kreatinin &divide;10 zur gemeinsamen Darstellung skaliert</div>
+  <div class="note">Kreatinin &divide;10 zur gemeinsamen Darstellung skaliert &middot; SDMA am 02.07. nicht bestimmt</div>
 </div>
 
 <div id="panel-elektro" class="panel">
@@ -118,7 +120,24 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <div id="panel-urin" class="panel">
-  <p class="sn">Befund vom 12.03.2026</p>
+  <p class="sn">Befund vom 02.07.2026</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>Farbe/Transparenz</td><td class="r">strohgelb</td><td class="r">leicht tr&uuml;b</td></tr>
+      <tr><td>Spez. Gewicht</td><td class="r tlo">1,012</td><td class="r tlo">Isosthenurie</td></tr>
+      <tr><td>pH</td><td class="r tok">5</td><td class="r tok">normal (untere Grenze)</td></tr>
+      <tr><td>Eiwei&szlig;</td><td class="r thi">(+)</td><td class="r thi">Spuren</td></tr>
+      <tr><td>Blut</td><td class="r thi">++++</td><td class="r thi">stark erh&ouml;ht</td></tr>
+      <tr><td>Leukozyten</td><td class="r thi">20/HPF</td><td class="r thi">Py&uuml;rie</td></tr>
+      <tr><td>Erythrozyten</td><td class="r thi">12/HPF</td><td class="r thi">H&auml;maturie</td></tr>
+      <tr><td>Bakterien</td><td class="r thi">++++ Kokken</td><td class="r thi">Bakteriurie</td></tr>
+      <tr><td>&Uuml;bergangsepithel</td><td class="r tok">&lt;1/HPF</td><td class="r tok">unauff&auml;llig</td></tr>
+      <tr><td>UPC</td><td class="r thi">0,45</td><td class="r thi">proteinurisch (IRIS &gt;0,4)</td></tr>
+    </tbody>
+  </table>
+
+  <p class="sn" style="margin-top:16px">Befund vom 12.03.2026</p>
   <table>
     <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Befund</th></tr></thead>
     <tbody>
@@ -137,7 +156,29 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <div id="panel-gas" class="panel">
-  <p class="sn">Befund vom 12.03.2026</p>
+  <p class="sn">Befund vom 02.07.2026</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Ref.</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>pH (ven&ouml;s)</td><td class="r tlo">7,208</td><td class="r">7,34&ndash;7,44</td><td class="r tlo">Azidose</td></tr>
+      <tr><td>cpH (korr.)</td><td class="r tlo">7,195</td><td class="r">7,34&ndash;7,44</td><td class="r tlo">Azidose</td></tr>
+      <tr><td>cHCO3std (mmol/L)</td><td class="r tlo">17,1</td><td class="r">19&ndash;24</td><td class="r tlo">erniedrigt</td></tr>
+      <tr><td>cBE(vv) (mmol/L)</td><td class="r tlo">-8,4</td><td class="r">-2,5&ndash;2,5</td><td class="r tlo">met. Azidose</td></tr>
+      <tr><td>cAnGap (mmol/L)</td><td class="r thi">21,9</td><td class="r">~12&ndash;20</td><td class="r thi">High-AG</td></tr>
+      <tr><td>Laktat (mmol/L)</td><td class="r thi">4,45</td><td class="r">0&ndash;2,5</td><td class="r thi">erh&ouml;ht</td></tr>
+      <tr><td>Glukose (mmol/L)</td><td class="r thi">11,4</td><td class="r">3,7&ndash;6,9</td><td class="r thi">erh&ouml;ht</td></tr>
+      <tr><td>PCO2 (mmHg)</td><td class="r tok">50,1</td><td class="r">29&ndash;51</td><td class="r tok">obere Grenze</td></tr>
+      <tr><td>cPCO2 (mmHg)</td><td class="r thi">52,3</td><td class="r">29&ndash;51</td><td class="r thi">erh&ouml;ht</td></tr>
+      <tr><td>Natrium (mmol/L)</td><td class="r tok">153,5</td><td class="r">146&ndash;158</td><td class="r tok">normal</td></tr>
+      <tr><td>Kalium (mmol/L)</td><td class="r tok">3,92</td><td class="r">3,0&ndash;5,0</td><td class="r tok">normal</td></tr>
+      <tr><td>Ca++ ion. (mmol/L)</td><td class="r tok">1,26</td><td class="r">1,17&ndash;1,36</td><td class="r tok">normal</td></tr>
+      <tr><td>Chlorid (mmol/L)</td><td class="r tok">116</td><td class="r">110&ndash;124</td><td class="r tok">normal</td></tr>
+      <tr><td>cHkt</td><td class="r tok">0,37</td><td class="r">0,30&ndash;0,44</td><td class="r tok">normal</td></tr>
+      <tr><td>Hb gesamt (mmol/L)</td><td class="r tok">7,9</td><td class="r">5,6&ndash;9,3</td><td class="r tok">normal</td></tr>
+    </tbody>
+  </table>
+
+  <p class="sn" style="margin-top:16px">Befund vom 12.03.2026</p>
   <table>
     <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Ref.</th><th class="r">Befund</th></tr></thead>
     <tbody>
@@ -155,36 +196,79 @@ tr:last-child td{border-bottom:none}
   </table>
 </div>
 
-<script>
-var DATES = ['18.10.2025','07.03.2026','12.03.2026','31.03.2026'];
-var LABELS = ['Okt 25','Mrz 07','Mrz 12','Mrz 31'];
+<div id="panel-weitere" class="panel">
+  <p class="sn">Blutbild vom 02.07.2026 (IDEXX ProCyte Dx)</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Ref.</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>MCV (fL)</td><td class="r tok">40,7</td><td class="r">35,9&ndash;53,1</td><td class="r tok">normal</td></tr>
+      <tr><td>MCH (pg)</td><td class="r tok">11,8</td><td class="r">11,8&ndash;17,3</td><td class="r tok">untere Grenze</td></tr>
+      <tr><td>MCHC (g/dL)</td><td class="r tok">29</td><td class="r">28,1&ndash;35,8</td><td class="r tok">normal</td></tr>
+      <tr><td>RDW (%)</td><td class="r thi">31,6</td><td class="r">15&ndash;27</td><td class="r thi">Anisozytose</td></tr>
+      <tr><td>Leukozyten (&times;10&#8313;/L)</td><td class="r tok">4,54</td><td class="r">2,87&ndash;17,02</td><td class="r tok">normal</td></tr>
+      <tr><td>Neutrophile (&times;10&#8313;/L)</td><td class="r tok">2,52</td><td class="r">2,3&ndash;10,29</td><td class="r tok">normal</td></tr>
+      <tr><td>Lymphozyten (&times;10&#8313;/L)</td><td class="r tok">1,47</td><td class="r">0,92&ndash;6,88</td><td class="r tok">normal</td></tr>
+      <tr><td>Monozyten (&times;10&#8313;/L)</td><td class="r tok">0,31</td><td class="r">0,05&ndash;0,67</td><td class="r tok">normal</td></tr>
+      <tr><td>Eosinophile (&times;10&#8313;/L)</td><td class="r tlo">0,12</td><td class="r">0,17&ndash;1,57</td><td class="r tlo">erniedrigt</td></tr>
+      <tr><td>Basophile (&times;10&#8313;/L)</td><td class="r tok">0,12</td><td class="r">0,01&ndash;0,26</td><td class="r tok">normal</td></tr>
+      <tr><td>Thrombozyten (K/&micro;L)</td><td class="r tok">443</td><td class="r">151&ndash;600</td><td class="r tok">normal</td></tr>
+      <tr><td>MPV (fL)</td><td class="r tok">17,5</td><td class="r">11,4&ndash;21,6</td><td class="r tok">normal</td></tr>
+      <tr><td>PCT (%)</td><td class="r tok">0,78</td><td class="r">0,17&ndash;0,86</td><td class="r tok">normal</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Laborhinweis: erh&ouml;hte RDW, Anisozytose vorliegend, Blutausstrich &uuml;berpr&uuml;fen</div>
 
+  <p class="sn" style="margin-top:16px">Serumprofil vom 02.07.2026</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Ref.</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>AP (U/L)</td><td class="r tok">41</td><td class="r">0&ndash;94</td><td class="r tok">normal</td></tr>
+      <tr><td>ALT (U/L)</td><td class="r tok">85</td><td class="r">0&ndash;114</td><td class="r tok">normal</td></tr>
+      <tr><td>Bilirubin (&micro;mol/L)</td><td class="r tok">0,59</td><td class="r">0,00&ndash;4,74</td><td class="r tok">normal</td></tr>
+      <tr><td>Gesamteiwei&szlig; (g/L)</td><td class="r tok">64,1</td><td class="r">57,0&ndash;94,0</td><td class="r tok">normal</td></tr>
+      <tr><td>Glukose (mmol/L)</td><td class="r thi">11,72</td><td class="r">3,70&ndash;6,90</td><td class="r thi">erh&ouml;ht</td></tr>
+      <tr><td>Chlorid (mmol/L)</td><td class="r tok">116,0</td><td class="r">100,0&ndash;124,0</td><td class="r tok">normal</td></tr>
+      <tr><td>CK (U/L)</td><td class="r tok">89</td><td class="r">0&ndash;414</td><td class="r tok">normal</td></tr>
+      <tr><td>Triglyceride (mmol/L)</td><td class="r tok">0,86</td><td class="r">0,57&ndash;1,14</td><td class="r tok">normal</td></tr>
+      <tr><td>Cholesterin (mmol/L)</td><td class="r thi">6,14</td><td class="r">1,80&ndash;3,90</td><td class="r thi">erh&ouml;ht</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Kreatinin, Harnstoff, Phosphat, Natrium, Kalium, Calcium und Albumin: siehe Tabs Niere und Elektrolyte</div>
+</div>
+
+<script>
+var DATES = ['18.10.2025','07.03.2026','12.03.2026','31.03.2026','02.07.2026'];
+var LABELS = ['Okt 25','Mrz 07','Mrz 12','Mrz 31','Jul 02'];
+
+// refs: optionale Referenzbereiche je Messpunkt (Index -> [lo,hi]), z. B. bei Laborwechsel
+// null in data = Wert nicht bestimmt
 var CHARTS = {
   anamie: { datasets: [
-    {label:'Hkt x10',      data:[4.49,2.64,2.08,2.38], lo:2.82,hi:5.27,  color:'#dc2626',unit:''},
-    {label:'Hgb /10',      data:[13.0,8.6,6.7,7.8],    lo:10.3,hi:16.2,  color:'#b45309',unit:''},
-    {label:'RBC x10^12/L', data:[9.53,5.65,4.5,5.51],  lo:7.1, hi:11.5,  color:'#1d6abf',unit:''}
+    {label:'Hkt x10',      data:[4.49,2.64,2.08,2.38,4.1],  lo:2.82,hi:5.27, refs:{4:[3.03,5.23]}, color:'#dc2626',unit:''},
+    {label:'Hgb /10',      data:[13.0,8.6,6.7,7.8,11.9],    lo:10.3,hi:16.2, refs:{4:[9.8,16.2]},  color:'#b45309',unit:''},
+    {label:'RBC x10^12/L', data:[9.53,5.65,4.5,5.51,10.08], lo:7.1, hi:11.5, refs:{4:[6.54,12.2]}, color:'#1d6abf',unit:''}
   ]},
   retik: {
     bands:[{min:15.3,max:22.9,color:'rgba(124,92,191,0.10)'},{min:0,max:50,color:'rgba(29,158,117,0.07)'}],
     datasets: [
-      {label:'Ret-Hb',     data:[15.5,16.0,16.7,11.8],   lo:15.3,hi:22.9,color:'#7c5cbf',unit:' pg'},
-      {label:'Retik abs.', data:[28.59,16.95,16.2,33.06], lo:0,   hi:50,  color:'#1d9e75',unit:' K/uL'}
+      {label:'Ret-Hb',     data:[15.5,16.0,16.7,11.8,14.0],    lo:15.3,hi:22.9, refs:{4:[13.2,20.8]}, color:'#7c5cbf',unit:' pg'},
+      {label:'Retik abs.', data:[28.59,16.95,16.2,33.06,26.2], lo:0,   hi:50,   refs:{4:[3,50]},      color:'#1d9e75',unit:' K/uL'}
     ]},
   niere: { datasets: [
-    {label:'SDMA',    data:[16,40,40,33],             lo:0,   hi:14,   color:'#dc2626',unit:' ug/dL'},
-    {label:'Krea/10', data:[20.33,38.9,30.1,27.4],    lo:7.9, hi:20.3, color:'#b45309',unit:''},
-    {label:'BUN',     data:[13.57,27.13,20.86,23.92], lo:5.71,hi:13.57,color:'#1d6abf',unit:' mmol/L'},
-    {label:'Phos',    data:[2.0,1.9,1.31,1.7],        lo:0.8, hi:2.2,  color:'#1d9e75',unit:' mmol/L'}
+    {label:'SDMA',    data:[16,40,40,33,null],              lo:0,   hi:14,                            color:'#dc2626',unit:' ug/dL'},
+    {label:'Krea/10', data:[20.33,38.9,30.1,27.4,25.6],     lo:7.9, hi:20.3,  refs:{4:[0,16.9]},      color:'#b45309',unit:''},
+    {label:'BUN',     data:[13.57,27.13,20.86,23.92,22.55], lo:5.71,hi:13.57, refs:{4:[5.0,11.3]},    color:'#1d6abf',unit:' mmol/L'},
+    {label:'Phos',    data:[2.0,1.9,1.31,1.7,1.45],         lo:0.8, hi:2.2,   refs:{4:[0.97,2.36]},   color:'#1d9e75',unit:' mmol/L'}
   ]},
   elektro: { datasets: [
-    {label:'Natrium', data:[158,152,155.2,155], lo:147,hi:159,color:'#1d6abf',unit:' mmol/L'},
-    {label:'Kalium',  data:[5.4,3.8,4.5,4.4],  lo:3.3,hi:5.8, color:'#b45309',unit:' mmol/L'},
-    {label:'Calcium', data:[2.5,2.6,2.65,2.6], lo:2.2,hi:2.9, color:'#1d9e75',unit:' mmol/L'},
-    {label:'Albumin', data:[32,31,34,34],       lo:27, hi:44,  color:'#7c5cbf', unit:' g/L'}
+    {label:'Natrium', data:[158,152,155.2,155,151.5], lo:147,hi:159, refs:{4:[146,165]}, color:'#1d6abf',unit:' mmol/L'},
+    {label:'Kalium',  data:[5.4,3.8,4.5,4.4,4.69],    lo:3.3,hi:5.8, refs:{4:[3.5,5.6]}, color:'#b45309',unit:' mmol/L'},
+    {label:'Calcium', data:[2.5,2.6,2.65,2.6,2.7],    lo:2.2,hi:2.9, refs:{4:[2.3,3.0]}, color:'#1d9e75',unit:' mmol/L'},
+    {label:'Albumin', data:[32,31,34,34,37.6],        lo:27, hi:44,  refs:{4:[26,56]},   color:'#7c5cbf', unit:' g/L'}
   ]}
 };
 
+function refAt(ds,i){ return (ds.refs && ds.refs[i]) ? ds.refs[i] : [ds.lo, ds.hi]; }
 function ptColor(v,lo,hi){ return v<lo?'#dc2626':v>hi?'#b45309':'#1d6abf'; }
 function statusText(v,lo,hi){ return v<lo?'unter Ref.':v>hi?'ueber Ref.':'im Ref.-Bereich'; }
 
@@ -195,8 +279,9 @@ function showPopup(ds, v, i, el) {
   document.getElementById('p-title').textContent = ds.label;
   document.getElementById('p-date').textContent = DATES[i];
   document.getElementById('p-val').textContent = v.toFixed(2) + (ds.unit||'');
-  document.getElementById('p-ref').textContent = 'Ref: ' + ds.lo + ' - ' + ds.hi + (ds.unit||'');
-  document.getElementById('p-status').textContent = statusText(v, ds.lo, ds.hi);
+  var rf = refAt(ds, i);
+  document.getElementById('p-ref').textContent = 'Ref: ' + rf[0] + ' - ' + rf[1] + (ds.unit||'');
+  document.getElementById('p-status').textContent = statusText(v, rf[0], rf[1]);
   pop.style.display = 'block';
   var r = el.getBoundingClientRect();
   var pw = 200, ph = 110;
@@ -217,7 +302,7 @@ function buildChart(name) {
   container.innerHTML = '';
 
   var all = [];
-  cfg.datasets.forEach(function(ds){ ds.data.forEach(function(v){ all.push(v); }); });
+  cfg.datasets.forEach(function(ds){ ds.data.forEach(function(v){ if (v !== null) all.push(v); }); });
   var mn = Math.min.apply(null,all), mx = Math.max.apply(null,all), rng = mx-mn||1;
   mn -= rng*0.15; mx += rng*0.15; rng = mx-mn;
 
@@ -288,7 +373,7 @@ function buildChart(name) {
   // lines per dataset
   cfg.datasets.forEach(function(ds){
     var pts = [];
-    ds.data.forEach(function(v,i){ pts.push(xpct(i)+','+pct(v)); });
+    ds.data.forEach(function(v,i){ if (v !== null) pts.push(xpct(i)+','+pct(v)); });
     var pl = document.createElementNS(NS,'polyline');
     pl.setAttribute('points', pts.join(' '));
     pl.setAttribute('fill','none');
@@ -303,14 +388,16 @@ function buildChart(name) {
   // HTML div dots -- these get native touch events reliably on iOS
   cfg.datasets.forEach(function(ds){
     ds.data.forEach(function(v,i){
+      if (v === null) return;
       var pt = document.createElement('div');
       pt.className = 'pt';
       pt.style.left = xpct(i) + '%';
       pt.style.top  = pct(v) + '%';
 
+      var rf = refAt(ds, i);
       var dot = document.createElement('div');
       dot.className = 'pt-dot';
-      dot.style.background = ptColor(v, ds.lo, ds.hi);
+      dot.style.background = ptColor(v, rf[0], rf[1]);
       pt.appendChild(dot);
 
       // closure to capture ds, v, i
