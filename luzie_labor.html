@@ -112,7 +112,7 @@ tr:last-child td{border-bottom:none}
     <div class="card"><div class="card-label">Kreatinin 02.07.</div><div class="card-val hi">256 &micro;mol/L</div><div class="card-ref">Ref 0&ndash;169</div></div>
   </div>
   <div id="chart-niere"></div>
-  <div class="note">Kreatinin &divide;10 zur gemeinsamen Darstellung skaliert &middot; SDMA am 02.07. nicht bestimmt</div>
+  <div class="note">Kreatinin &divide;10 zur gemeinsamen Darstellung skaliert &middot; SDMA am 02.07. nicht bestimmt &middot; SDMA 26.05.2025 im Ausdruck in nmol/l (193,1; Ref. bis 180,2), entspricht 15 &micro;g/dL (Ref. bis 14)</div>
 </div>
 
 <div id="panel-elektro" class="panel">
@@ -234,37 +234,50 @@ tr:last-child td{border-bottom:none}
     </tbody>
   </table>
   <div class="note">Kreatinin, Harnstoff, Phosphat, Natrium, Kalium, Calcium und Albumin: siehe Tabs Niere und Elektrolyte</div>
+
+  <p class="sn" style="margin-top:16px">Befund vom 26.05.2025 (IDEXX, NSAID-Profil + SNAP BNP)</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Ref.</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>ALT (U/L)</td><td class="r tok">53</td><td class="r">12&ndash;130</td><td class="r tok">normal</td></tr>
+      <tr><td>AST (U/L)</td><td class="r tok">24</td><td class="r">0&ndash;48</td><td class="r tok">normal</td></tr>
+      <tr><td>AP (U/L)</td><td class="r tok">41</td><td class="r">14&ndash;111</td><td class="r tok">normal</td></tr>
+      <tr><td>Harnstoff/Kreatinin-Verh&auml;ltnis</td><td class="r">13</td><td class="r">&ndash;</td><td class="r">&ndash;</td></tr>
+      <tr><td>fBNP (SNAP-Schnelltest)</td><td class="r tok">normal</td><td class="r">&ndash;</td><td class="r tok">kein Hinweis auf Herzerkrankung</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Enzyme im Ausdruck in nkat/l, hier umgerechnet in U/L (&divide;16,67). SDMA, Kreatinin und Harnstoff: siehe Tab Niere</div>
 </div>
 
 <script>
-var DATES = ['18.10.2025','07.03.2026','12.03.2026','31.03.2026','02.07.2026'];
-var LABELS = ['Okt 25','Mrz 07','Mrz 12','Mrz 31','Jul 02'];
+var DATES = ['26.05.2025','18.10.2025','07.03.2026','12.03.2026','31.03.2026','02.07.2026'];
+var LABELS = ['Mai 25','Okt 25','Mrz 07','Mrz 12','Mrz 31','Jul 02'];
 
 // refs: optionale Referenzbereiche je Messpunkt (Index -> [lo,hi]), z. B. bei Laborwechsel
-// null in data = Wert nicht bestimmt
+// null in data = Wert nicht bestimmt; Spalten ohne jeden Wert werden im Diagramm ausgeblendet
 var CHARTS = {
   anamie: { datasets: [
-    {label:'Hkt x10',      data:[4.49,2.64,2.08,2.38,4.1],  lo:2.82,hi:5.27, refs:{4:[3.03,5.23]}, color:'#dc2626',unit:''},
-    {label:'Hgb /10',      data:[13.0,8.6,6.7,7.8,11.9],    lo:10.3,hi:16.2, refs:{4:[9.8,16.2]},  color:'#b45309',unit:''},
-    {label:'RBC x10^12/L', data:[9.53,5.65,4.5,5.51,10.08], lo:7.1, hi:11.5, refs:{4:[6.54,12.2]}, color:'#1d6abf',unit:''}
+    {label:'Hkt x10',      data:[null,4.49,2.64,2.08,2.38,4.1],  lo:2.82,hi:5.27, refs:{5:[3.03,5.23]}, color:'#dc2626',unit:''},
+    {label:'Hgb /10',      data:[null,13.0,8.6,6.7,7.8,11.9],    lo:10.3,hi:16.2, refs:{5:[9.8,16.2]},  color:'#b45309',unit:''},
+    {label:'RBC x10^12/L', data:[null,9.53,5.65,4.5,5.51,10.08], lo:7.1, hi:11.5, refs:{5:[6.54,12.2]}, color:'#1d6abf',unit:''}
   ]},
   retik: {
     bands:[{min:15.3,max:22.9,color:'rgba(124,92,191,0.10)'},{min:0,max:50,color:'rgba(29,158,117,0.07)'}],
     datasets: [
-      {label:'Ret-Hb',     data:[15.5,16.0,16.7,11.8,14.0],    lo:15.3,hi:22.9, refs:{4:[13.2,20.8]}, color:'#7c5cbf',unit:' pg'},
-      {label:'Retik abs.', data:[28.59,16.95,16.2,33.06,26.2], lo:0,   hi:50,   refs:{4:[3,50]},      color:'#1d9e75',unit:' K/uL'}
+      {label:'Ret-Hb',     data:[null,15.5,16.0,16.7,11.8,14.0],    lo:15.3,hi:22.9, refs:{5:[13.2,20.8]}, color:'#7c5cbf',unit:' pg'},
+      {label:'Retik abs.', data:[null,28.59,16.95,16.2,33.06,26.2], lo:0,   hi:50,   refs:{5:[3,50]},      color:'#1d9e75',unit:' K/uL'}
     ]},
   niere: { datasets: [
-    {label:'SDMA',    data:[16,40,40,33,null],              lo:0,   hi:14,                            color:'#dc2626',unit:' ug/dL'},
-    {label:'Krea/10', data:[20.33,38.9,30.1,27.4,25.6],     lo:7.9, hi:20.3,  refs:{4:[0,16.9]},      color:'#b45309',unit:''},
-    {label:'BUN',     data:[13.57,27.13,20.86,23.92,22.55], lo:5.71,hi:13.57, refs:{4:[5.0,11.3]},    color:'#1d6abf',unit:' mmol/L'},
-    {label:'Phos',    data:[2.0,1.9,1.31,1.7,1.45],         lo:0.8, hi:2.2,   refs:{4:[0.97,2.36]},   color:'#1d9e75',unit:' mmol/L'}
+    {label:'SDMA',    data:[15,16,40,40,33,null],                lo:0,   hi:14,                                       color:'#dc2626',unit:' ug/dL'},
+    {label:'Krea/10', data:[23.5,20.33,38.9,30.1,27.4,25.6],     lo:7.9, hi:20.3,  refs:{0:[7.1,21.2],5:[0,16.9]},    color:'#b45309',unit:''},
+    {label:'BUN',     data:[12.3,13.57,27.13,20.86,23.92,22.55], lo:5.71,hi:13.57, refs:{0:[5.7,12.9],5:[5.0,11.3]},  color:'#1d6abf',unit:' mmol/L'},
+    {label:'Phos',    data:[null,2.0,1.9,1.31,1.7,1.45],         lo:0.8, hi:2.2,   refs:{5:[0.97,2.36]},              color:'#1d9e75',unit:' mmol/L'}
   ]},
   elektro: { datasets: [
-    {label:'Natrium', data:[158,152,155.2,155,151.5], lo:147,hi:159, refs:{4:[146,165]}, color:'#1d6abf',unit:' mmol/L'},
-    {label:'Kalium',  data:[5.4,3.8,4.5,4.4,4.69],    lo:3.3,hi:5.8, refs:{4:[3.5,5.6]}, color:'#b45309',unit:' mmol/L'},
-    {label:'Calcium', data:[2.5,2.6,2.65,2.6,2.7],    lo:2.2,hi:2.9, refs:{4:[2.3,3.0]}, color:'#1d9e75',unit:' mmol/L'},
-    {label:'Albumin', data:[32,31,34,34,37.6],        lo:27, hi:44,  refs:{4:[26,56]},   color:'#7c5cbf', unit:' g/L'}
+    {label:'Natrium', data:[null,158,152,155.2,155,151.5], lo:147,hi:159, refs:{5:[146,165]}, color:'#1d6abf',unit:' mmol/L'},
+    {label:'Kalium',  data:[null,5.4,3.8,4.5,4.4,4.69],    lo:3.3,hi:5.8, refs:{5:[3.5,5.6]}, color:'#b45309',unit:' mmol/L'},
+    {label:'Calcium', data:[null,2.5,2.6,2.65,2.6,2.7],    lo:2.2,hi:2.9, refs:{5:[2.3,3.0]}, color:'#1d9e75',unit:' mmol/L'},
+    {label:'Albumin', data:[null,32,31,34,34,37.6],        lo:27, hi:44,  refs:{5:[26,56]},   color:'#7c5cbf', unit:' g/L'}
   ]}
 };
 
@@ -307,7 +320,16 @@ function buildChart(name) {
   mn -= rng*0.15; mx += rng*0.15; rng = mx-mn;
 
   function pct(v){ return (1 - (v-mn)/rng) * 100; }
-  var XINSET=10; function xpct(i){ return XINSET + (i/(LABELS.length-1))*(100-XINSET-3); }
+  // only columns where this chart has at least one value
+  var cols = [];
+  LABELS.forEach(function(l, i){
+    if (cfg.datasets.some(function(ds){ return ds.data[i] !== null; })) cols.push(i);
+  });
+  var XINSET=10;
+  function xpct(i){
+    var k = cols.indexOf(i);
+    return XINSET + (cols.length > 1 ? k/(cols.length-1) : 0.5)*(100-XINSET-3);
+  }
 
   // wrapper
   var wrap = document.createElement('div');
@@ -422,10 +444,10 @@ function buildChart(name) {
   var xlabs = document.createElement('div');
   xlabs.className = 'xlabels';
   // labels at the same x positions as the data points
-  LABELS.forEach(function(l, i){
+  cols.forEach(function(i){
     var sp = document.createElement('span');
     sp.style.left = xpct(i) + '%';
-    sp.textContent = l;
+    sp.textContent = LABELS[i];
     xlabs.appendChild(sp);
   });
   wrap.appendChild(xlabs);
