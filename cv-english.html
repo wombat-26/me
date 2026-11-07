@@ -771,6 +771,25 @@
                 break-after: avoid !important;
             }
         }
+    
+        /* ATS reading order: text containers stay unpositioned and opaque,
+           so the PDF text follows the DOM order (name and contact first). */
+        .header { position: static; border-bottom: 3px solid #f59e0b; }
+        .header::after { content: none; }
+        .title { opacity: 1; color: rgba(255, 255, 255, 0.95); }
+        .availability { opacity: 1; color: rgba(255, 255, 255, 0.9); }
+        .experience-item { position: static; }
+        .experience-item::before { position: static; float: left; margin: 5px 0 0 -38px; }
+        .cert-list li { position: static; padding-left: 20px; text-indent: -20px; }
+        .cert-list li::before { position: static; display: inline-block; width: 20px; text-indent: 0; }
+        .education-item { position: static; }
+        .education-item::before { position: static; float: left; margin-left: -17px; }
+        /* ATS keywords: hyphenated terms never break at their hyphen */
+        .nobr { white-space: nowrap; }
+
+        /* Technical skills as compact single-column lines */
+        .skills-compact p { margin: 0 0 5px; font-size: 9.5pt; line-height: 1.45; }
+        .skills-compact strong { color: #3d5a4f; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -810,65 +829,21 @@
             <div class="section">
                 <h2 class="section-title">Professional Summary</h2>
                 <p class="profile-text">
-                    Senior technical writer with over 11 years of experience in technical documentation, mostly in enterprise SaaS environments, specializing in developer documentation, API documentation, and docs-as-code strategies. Over 20 years of writing about technology overall, previously as a technical book author and editor. Proven track record of shipping documentation for fast-growing companies and successfully testing products hands-on to ensure technical accuracy. Advanced knowledge in cross-functional collaboration with distributed teams and transforming traditional documentation into agile, scalable solutions. Available for a new position with immediate effect.
+                    Senior technical writer with over 11 years of experience in technical documentation, mostly in enterprise SaaS environments, specializing in developer documentation, API documentation, and <span class="nobr">docs-as-code</span> strategies. Over 20 years of writing about technology overall, previously as a technical book author and editor. Proven track record of shipping documentation for <span class="nobr">fast-growing</span> companies and successfully testing products <span class="nobr">hands-on</span> to ensure technical accuracy. Advanced knowledge in <span class="nobr">cross-functional</span> collaboration with distributed teams and transforming traditional documentation into agile, scalable solutions.
                 </p>
             </div>
             
             <div class="section">
                 <h2 class="section-title">Core Competencies</h2>
                  <ul class="cert-list">
-                    <li>Docs-as-code workflow implementation & automation</li>
+                    <li><span class="nobr">Docs-as-code</span> workflow implementation & automation</li>
                     <li>Developer documentation and API portal management</li>
                     <li>Documentation strategy and information architecture</li>
-                    <li>Global asynchronous collaboration (Engineering, PM, UX)</li>
                     <li>Content quality management (Vale style guides)</li>
                     <li>Terminology management, glossaries, and localization workflows</li>
-                    <li>Hands-on product testing & QA for documentation accuracy</li>
-                    <li>Agile documentation methodologies & Scrum</li>
-                    <li>Content usage analysis and ROI evaluation</li>
-                    <li>Regulatory compliance documentation</li>
-                    <li>Technical translation management</li>
                 </ul>
             </div>
             
-            <div class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-category">Documentation platforms and tools</div>
-                        <div class="skill-items">Docs-as-Code, AsciiDoc, Markdown, Vale style guide, MadCap Flare, Writerside, Document360, Crowdin, Jekyll, Eleventy, Pandoc</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Development and web technologies</div>
-                        <div class="skill-items">REST API integration, Swagger/OpenAPI, Python scripting, HTML5, CSS3, JavaScript, Node.js, Claude code integration, responsive design</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Version control and CI/CD</div>
-                        <div class="skill-items">Git version control, GitHub Actions, CI/CD workflows, workflow automation</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">iOS / Apple platform development</div>
-                        <div class="skill-items">Swift, SwiftUI, SwiftData, WidgetKit, Swift Charts, Xcode, Apple Developer Program, AI-assisted coding</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Localization and terminology</div>
-                        <div class="skill-items">Crowdin Enterprise, AI-supported translation, translation memory, terminology bases, glossary management</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Project management and collaboration</div>
-                        <div class="skill-items">Agile methodologies, Scrum, Jira, Confluence, Productboard, cross-functional team collaboration</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Operating systems and command line</div>
-                        <div class="skill-items">Linux CLI (expert level), macOS terminal (expert level), Windows PowerShell</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Analytics and content strategy</div>
-                        <div class="skill-items">Content usage analysis, documentation ROI evaluation, data-driven content strategies, information architecture</div>
-                    </div>
-                </div>
-            </div>
- 
             <div class="section professional-experience">
                 <h2 class="section-title">Professional Experience</h2>
                 
@@ -881,10 +856,10 @@
                     <div class="job-description">
                         <ul>
                             <li><strong>Release Notes Automation:</strong> Published release notes programmatically through the Document360 API using Python, removing manual publishing steps from every release cycle.</li>
-                            <li><strong>Localization Pilot:</strong> Set up and ran the pilot for Crowdin Enterprise, introducing AI-supported translation and a translation memory to the documentation workflow.</li>
-                            <li><strong>Editorial Standards:</strong> Established the editorial style guide, the company terminology base, and a public-facing glossary as the shared reference for documentation, product, and support.</li>
-                            <li><strong>Platform Documentation:</strong> Created and maintained English-language documentation for the Lobster Data Platform (iPaaS/enterprise integration), targeting experienced system and platform administrators.</li>
-                            <li><strong>AI-Assisted Workflows:</strong> Integrated Claude Enterprise into daily documentation workflows to accelerate drafting, editing, and content review while upholding editorial and terminology standards.</li>
+                            <li><strong>Localization Pilot:</strong> Set up and ran the pilot for Crowdin Enterprise, introducing <span class="nobr">AI-supported</span> translation and a translation memory to the documentation workflow.</li>
+                            <li><strong>Editorial Standards:</strong> Established the editorial style guide, the company terminology base, and a <span class="nobr">public-facing</span> glossary as the shared reference for documentation, product, and support.</li>
+                            <li><strong>Platform Documentation:</strong> Created and maintained <span class="nobr">English-language</span> documentation for the Lobster Data Platform (iPaaS/enterprise integration), targeting experienced system and platform administrators.</li>
+                            <li><strong><span class="nobr">AI-Assisted</span> Workflows:</strong> Integrated Claude Enterprise into daily documentation workflows to accelerate drafting, editing, and content review while upholding editorial and terminology standards.</li>
                         </ul>
                     </div>
                 </div>
@@ -901,13 +876,13 @@
                         </div>
                         <div class="job-description">
                             <ul>
-                                <li><strong>Docs-as-Code Leadership:</strong> Championed and implemented company-wide docs-as-code practices, fully integrating documentation into the version control and CI/CD pipelines to match engineering workflows.</li>
+                                <li><strong><span class="nobr">Docs-as-Code</span> Leadership:</strong> Championed and implemented <span class="nobr">company-wide</span> <span class="nobr">docs-as-code</span> practices, fully integrating documentation into the version control and CI/CD pipelines to match engineering workflows.</li>
                                 <li><strong>API & Developer Experience:</strong> Engineered and maintained the public developer portal, creating comprehensive guides for REST APIs that directly improved developer onboarding and adoption.</li>
                                 <li><strong>Workflow Automation:</strong> Developed an automated API changelog generation system using Node.js and OpenAPI, reducing manual effort by 80% while significantly increasing accuracy.</li>
-                                <li><strong>AI-Assisted Documentation:</strong> Adopted Claude Enterprise across documentation workflows to speed up content creation, API guide drafting, and consistency checks against the Vale style guide.</li>
-                                <li><strong>Team Mentorship:</strong> Onboarded and mentored new technical writers and product managers, establishing scalable documentation standards and Vale-based style guides to ensure consistency.</li>
-                                <li><strong>QA & Product Testing:</strong> Validated documentation accuracy by proactively testing every feature and API endpoint hands-on before release, acting as a critical quality gatekeeper.</li>
-                                <li><strong>Global Collaboration:</strong> Orchestrated cross-functional collaboration and asynchronous work with distributed teams across North America, Eastern Europe, and Asia, coordinating priorities across 8+ time zones to maintain rapid product release cycles.</li>
+                                <li><strong><span class="nobr">AI-Assisted</span> Documentation:</strong> Adopted Claude Enterprise across documentation workflows to speed up content creation, API guide drafting, and consistency checks against the Vale style guide.</li>
+                                <li><strong>Team Mentorship:</strong> Onboarded and mentored new technical writers and product managers, establishing scalable documentation standards and <span class="nobr">Vale-based</span> style guides to ensure consistency.</li>
+                                <li><strong>QA & Product Testing:</strong> Validated documentation accuracy by proactively testing every feature and API endpoint <span class="nobr">hands-on</span> before release, acting as a critical quality gatekeeper.</li>
+                                <li><strong>Global Collaboration:</strong> Orchestrated <span class="nobr">cross-functional</span> collaboration and asynchronous work with distributed teams across North America, Eastern Europe, and Asia, coordinating priorities across 8+ time zones to maintain rapid product release cycles.</li>
                                 <li><strong>Departure:</strong> Role concluded due to wider company restructuring in late 2025.</li>
                             </ul>
                         </div>
@@ -919,7 +894,7 @@
                         </div>
                         <div class="job-description">
                             <ul>
-                                <li><strong>Enterprise SaaS Documentation:</strong> Created in-depth technical documentation for complex marketing resource management (MRM) SaaS products, including BPMN workflows and Camunda engine integrations for developer audiences.</li>
+                                <li><strong>Enterprise SaaS Documentation:</strong> Created <span class="nobr">in-depth</span> technical documentation for complex marketing resource management (MRM) SaaS products, including BPMN workflows and Camunda engine integrations for developer audiences.</li>
                                 <li><strong>Global Team Management:</strong> Managed asynchronous workflows and documentation projects with distributed engineering teams across North America, Europe, and Asia, ensuring seamless knowledge transfer.</li>
                                 <li><strong>Content Optimization:</strong> Spearheaded the implementation of a UI key variables system in MadCap Flare, which improved translation quality and content consistency across global markets.</li>
                                 <li><strong>UX Collaboration:</strong> Collaborated with UX teams on copy optimization to enhance the user interface and overall product usability.</li>
@@ -938,7 +913,7 @@
                         <ul>
                             <li><strong>Complex Systems Documentation:</strong> Authored technical documentation for special machine construction and PLC systems, translating complex engineering concepts into clear, actionable guides.</li>
                             <li><strong>Regulatory Compliance:</strong> Developed safety documentation and risk assessments for gloveboxes in strict compliance with Machinery Directive 2006/42/EC.</li>
-                            <li><strong>Technical Adaptability:</strong> Produced high-precision documentation for medical technology systems, demonstrating the ability to master new domains quickly.</li>
+                            <li><strong>Technical Adaptability:</strong> Produced <span class="nobr">high-precision</span> documentation for medical technology systems, demonstrating the ability to master new domains quickly.</li>
                         </ul>
                     </div>
                 </div>
@@ -952,7 +927,7 @@
                     <div class="job-description">
                         <ul>
                             <li><strong>Cloud Platform Documentation:</strong> Developed administrator manuals and technical guides for the "AHP Enterprise Cloud" platform.</li>
-                            <li><strong>Engineering Collaboration:</strong> Worked directly with cloud architects and development teams to create accurate, developer-focused documentation.</li>
+                            <li><strong>Engineering Collaboration:</strong> Worked directly with cloud architects and development teams to create accurate, <span class="nobr">developer-focused</span> documentation.</li>
                         </ul>
                     </div>
                 </div>
@@ -960,15 +935,12 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="company-name">Freelance Work</div>
-                        <div class="job-title">e-Discovery Specialist</div>
+                        <div class="job-title"><span class="nobr">e-Discovery</span> Specialist</div>
                         <div class="job-meta">Munich, Germany | January 2016 - October 2018</div>
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Managed the Relativity e-Discovery software for forensic data analysis.</li>
-                            <li>Created complex search queries, tagging, and batch processing of documents.</li>
-                            <li>Performed compliance checking and filtering of sensitive content (classified documents) before data exports.</li>
-                            <li>Provided support for international compliance projects in the aerospace industry.</li>
+                            <li>Managed the Relativity <span class="nobr">e-Discovery</span> software for forensic data analysis: complex search queries, tagging, batch processing, and compliance filtering of classified documents for international aerospace projects.</li>
                         </ul>
                     </div>
                 </div>
@@ -981,8 +953,8 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li><strong>Agile Collaboration:</strong> Embedded directly within Scrum teams, collaborating with developers and product managers to deliver documentation in lock-step with code releases.</li>
-                            <li><strong>QA & Testing:</strong> Conducted comprehensive black-box, usability, and user acceptance testing, ensuring that all documentation was based on verified product behavior.</li>
+                            <li><strong>Agile Collaboration:</strong> Embedded directly within Scrum teams, collaborating with developers and product managers to deliver documentation in <span class="nobr">lock-step</span> with code releases.</li>
+                            <li><strong>QA & Testing:</strong> Conducted comprehensive <span class="nobr">black-box</span>, usability, and user acceptance testing, ensuring that all documentation was based on verified product behavior.</li>
                             <li><strong>Process Optimization:</strong> Implemented and optimized documentation workflows for a complex enterprise content management system.</li>
                             <li><strong>Information Architecture:</strong> Led strategic improvements to the documentation site's structure to enhance discoverability and user experience.</li>
                         </ul>
@@ -1024,16 +996,30 @@
                 </div>
             </div>
             
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-compact">
+                    <p><strong>Documentation platforms and tools:</strong> <span class="nobr">Docs-as-Code</span>, AsciiDoc, Markdown, Vale style guide, MadCap Flare, Writerside, Document360, Crowdin, Jekyll, Eleventy, Pandoc</p>
+                    <p><strong>Development and web technologies:</strong> REST API integration, Swagger/OpenAPI, Python scripting, HTML5, CSS3, JavaScript, Node.js, Claude code integration, responsive design</p>
+                    <p><strong>Version control and CI/CD:</strong> Git version control, GitHub Actions, CI/CD workflows, workflow automation</p>
+                    <p><strong>iOS / Apple platform development:</strong> Swift, SwiftUI, SwiftData, WidgetKit, Swift Charts, Xcode, Apple Developer Program, <span class="nobr">AI-assisted</span> coding</p>
+                    <p><strong>Localization and terminology:</strong> Crowdin Enterprise, <span class="nobr">AI-supported</span> translation, translation memory, terminology bases, glossary management</p>
+                    <p><strong>Project management and collaboration:</strong> Agile methodologies, Scrum, Jira, Confluence, Productboard, <span class="nobr">cross-functional</span> team collaboration</p>
+                    <p><strong>Operating systems and command line:</strong> Linux CLI (expert level), macOS terminal (expert level), Windows PowerShell</p>
+                    <p><strong>Analytics and content strategy:</strong> Content usage analysis, documentation ROI evaluation, <span class="nobr">data-driven</span> content strategies, information architecture</p>
+                </div>
+            </div>
+            
             <div class="two-columns">
                 <div>
                     <div class="section">
                         <h2 class="section-title">Education & Professional Development</h2>
                         
-                        <h3 style="font-size: 11pt; font-weight: 600; margin-bottom: 4px;">Professional Development (2023-2025)</h3>
+                        <h3 style="font-size: 11pt; font-weight: 600; margin-bottom: 4px;">Professional Development (<span class="nobr">2023-2025</span>)</h3>
                         <div class="job-meta" style="margin-top: 0; margin-bottom: 8px;">All courses via LinkedIn Learning</div>
                        <ul class="cert-list" style="margin-bottom: 20px;">
-<li>Vibe Coding Programmierpraxis: KI-Agenten mit Bolt und Cursor entwickeln (2025)</li>
-<li>AI-Driven Software Development with OpenAI Canvas (2025)</li>
+<li>Vibe Coding Programmierpraxis: <span class="nobr">KI-Agenten</span> mit Bolt und Cursor entwickeln (2025)</li>
+<li><span class="nobr">AI-Driven</span> Software Development with OpenAI Canvas (2025)</li>
 <li>The Power of Accurate Prompting with Anthropic Claude (2024)</li>
 <li>GitHub Actions with Python Fundamentals (2024)</li>
 <li>UX Writing Fundamentals (2023)</li>
@@ -1043,7 +1029,7 @@
  
                         <div class="education-item">
                             <div class="job-title" style="font-size: 11pt; font-weight: 600;">University education</div>
-                            <div class="job-meta">Ludwig Maximilian University Munich - Modern German Literature, English Studies | 1993 - 1998</div>
+                            <div class="job-meta">Ludwig Maximilian University Munich - Modern German Literature, English Studies</div>
                             <div class="job-meta">Intermediate examinations passed, no degree</div>
                         </div>
                         <div class="education-item">
@@ -1056,16 +1042,16 @@
                 <div>
                     <div class="section">
                         <h2 class="section-title">Publications</h2>
-                        <p style="font-size: 10pt; color: #555; margin-bottom: 10px;">Technical books (2003-2008)</p>
+                        <p style="font-size: 10pt; color: #555; margin-bottom: 10px;">Technical books (<span class="nobr">2003-2008</span>)</p>
                         <ul class="cert-list">
-                            <li><strong>Mac OS X 10.4 für Power-User und Administratoren</strong> (2005)<br>
+                            <li><strong>Mac OS X 10.4 für <span class="nobr">Power-User</span> und Administratoren</strong> (2005)<br>
                                 <span style="font-size: 9pt; color: #555;">ISBN 3908497213</span></li>
-                            <li><strong>Das Mac OS X-Buch</strong> (2003)<br>
+                            <li><strong>Das Mac OS <span class="nobr">X-Buch</span></strong> (2003)<br>
                                 <span style="font-size: 9pt; color: #555;">ISBN 3907020553</span></li>
                             <li><strong>iLife '08 – Kreativität am Mac für alle</strong> (2008)<br>
                                 <span style="font-size: 9pt; color: #555;">ISBN 3908497639</span></li>
-                            <li><strong>iTunes-7-Trickkiste</strong> (2007)<br>
-                                <span style="font-size: 9pt; color: #555;">E-book publication</span></li>
+                            <li><strong><span class="nobr">iTunes-7-Trickkiste</span></strong> (2007)<br>
+                                <span style="font-size: 9pt; color: #555;"><span class="nobr">E-book</span> publication</span></li>
                             <li><strong>Insiderbuch Photoshop 7</strong> (2003)<br>
                                 <span style="font-size: 9pt; color: #555;">Translation and adaptation project</span></li>
                         </ul>
