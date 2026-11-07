@@ -454,9 +454,9 @@
                 display: block !important;
             }
             
-/*            .profile-photo {
+            .profile-photo {
                 display: none !important;
-            }*/
+            }
             
             .header::after {
                 /* Solid color fallback */
@@ -773,6 +773,21 @@
                 break-after: avoid !important;
             }
         }
+    
+        /* ATS reading order: text containers stay unpositioned and opaque,
+           so the PDF text follows the DOM order (name and contact first). */
+        .header { position: static; border-bottom: 3px solid #f59e0b; }
+        .header::after { content: none; }
+        .title { opacity: 1; color: rgba(255, 255, 255, 0.95); }
+        .availability { opacity: 1; color: rgba(255, 255, 255, 0.9); }
+        .experience-item { position: static; }
+        .experience-item::before { position: static; float: left; margin: 5px 0 0 -38px; }
+        .cert-list li { position: static; padding-left: 20px; text-indent: -20px; }
+        .cert-list li::before { position: static; display: inline-block; width: 20px; text-indent: 0; }
+        .education-item { position: static; }
+        .education-item::before { position: static; float: left; margin-left: -17px; }
+        /* ATS keywords: hyphenated terms never break at their hyphen */
+        .nobr { white-space: nowrap; }
     </style>
     
     <!-- JSON-LD Structured Data -->
@@ -894,13 +909,13 @@
             <div class="section">
                 <h2 class="section-title">Profil</h2>
                 <p class="profile-text">
-                    Senior Technical Writer mit über 11 Jahren Erfahrung in der technischen Dokumentation, überwiegend im Enterprise- und SaaS-Umfeld. Insgesamt über 20 Jahre Schreiben über Technik, davor als Fachbuchautor und Redakteur. Zuletzt tätig in den Abteilungen Education and Enablement (Uptempo) und Customer Education (Lobster DATA). Schwerpunkt: produktbezogene Dokumentation und Knowledge Bases für Mitarbeitende und Kunden.
+                    Senior Technical Writer mit über 11 Jahren Erfahrung in der technischen Dokumentation, überwiegend im Enterprise- und <span class="nobr">SaaS-Umfeld.</span> Insgesamt über 20 Jahre Schreiben über Technik, davor als Fachbuchautor und Redakteur. Zuletzt tätig in den Abteilungen Education and Enablement (Uptempo) und Customer Education (Lobster DATA). Schwerpunkt: produktbezogene Dokumentation und Knowledge Bases für Mitarbeitende und Kunden.
                 </p>
                 <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Kernexpertise:</strong> Aufbau und Strukturierung von Dokumentation und Knowledge Bases • Redaktionelle Standards mit Styleguide, Terminologiedatenbank und Glossar • Release Notes und Feature-Kommunikation zu jedem Release • KI-gestützte Content-Erstellung, Übersetzung und Qualitätsprüfung
+                    <strong>Kernexpertise:</strong> Aufbau und Strukturierung von Dokumentation und Knowledge Bases • Redaktionelle Standards mit Styleguide, Terminologiedatenbank und Glossar • Release Notes und <span class="nobr">Feature-Kommunikation</span> zu jedem Release • <span class="nobr">KI-gestützte</span> <span class="nobr">Content-Erstellung</span>, Übersetzung und Qualitätsprüfung
                 </p>
                 <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Arbeitsweise:</strong> Schnittstelle zwischen Product, Entwicklung, Support und Enablement • Onboarding und Wissenstransfer für neue Teammitglieder • Datengestützte Content-Strategie mit Nutzungsanalysen und Content-Audits • Automatisierung von Dokumentationsprozessen (Docs-as-Code, CI/CD, Python)
+                    <strong>Arbeitsweise:</strong> Schnittstelle zwischen Product, Entwicklung, Support und Enablement • Onboarding und Wissenstransfer für neue Teammitglieder • Datengestützte <span class="nobr">Content-Strategie</span> mit Nutzungsanalysen und <span class="nobr">Content-Audits</span> • Automatisierung von Dokumentationsprozessen (<span class="nobr">Docs-as-Code</span>, CI/CD, Python)
                 </p>
             </div>
             
@@ -916,10 +931,10 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Veröffentlichung der Release Notes über die Document360-API mit Python</li>
-                            <li>Aufsetzen und Durchführung des Pilotprojekts für Crowdin Enterprise mit KI-gestützter Übersetzung und Translation Memory</li>
+                            <li>Veröffentlichung der Release Notes über die <span class="nobr">Document360-API</span> mit Python</li>
+                            <li>Aufsetzen und Durchführung des Pilotprojekts für Crowdin Enterprise mit <span class="nobr">KI-gestützter</span> Übersetzung und Translation Memory</li>
                             <li>Aufbau des redaktionellen Styleguides, der Terminologiedatenbank und eines öffentlichen Glossars</li>
-                            <li>Erstellung und Pflege der Dokumentation für die Lobster Data Platform (iPaaS/Enterprise-Integration)</li>
+                            <li>Erstellung und Pflege der Dokumentation für die Lobster Data Platform (<span class="nobr">iPaaS/Enterprise-Integration</span>)</li>
                             <li>Dokumentation für erfahrene System- und Plattformadministratoren</li>
                         </ul>
                     </div>
@@ -937,17 +952,17 @@
                         </div>
                         <div class="job-description">
                             <ul>
-                                <li>Entwicklung eines automatisierten Konverters von MadCap Flare Source-Projekten zu AsciiDoc oder Writerside mit Claude Code</li>
-                                <li>Weiterentwicklung des API-Portals des Unternehmens mit vollständiger Implementierung von Docs-as-Code-Praktiken, Versionskontrolle und CI/CD-Integration</li>
-                                <li>Automatisierung der API-Changelog-Generierung mit Node.js, Swagger, Eleventy und npm-Tools basierend auf OpenAPI JSON</li>
-                                <li>Implementierung und Pflege von Vale-basierten Style Guides für konsistente Dokumentationsqualität</li>
-                                <li>Erprobung und Implementierung von LLM-basierten Tools für Content-Erstellung, Zusammenfassungen, Linting und Stilprüfungen sowie KI-gestützte Suche und Content-Vorschläge</li>
-                                <li>Optimierung der Auffindbarkeit von Inhalten: Verantwortung für SEO, Suchfunktionen und interne Verlinkung der Dokumentation mit Analytics-gestützter Erfolgsmessung (Bounce-Rate, Task-Completion-Rate)</li>
+                                <li>Entwicklung eines automatisierten Konverters von MadCap Flare <span class="nobr">Source-Projekten</span> zu AsciiDoc oder Writerside mit Claude Code</li>
+                                <li>Weiterentwicklung des <span class="nobr">API-Portals</span> des Unternehmens mit vollständiger Implementierung von <span class="nobr">Docs-as-Code-Praktiken</span>, Versionskontrolle und <span class="nobr">CI/CD-Integration</span></li>
+                                <li>Automatisierung der <span class="nobr">API-Changelog-Generierung</span> mit Node.js, Swagger, Eleventy und <span class="nobr">npm-Tools</span> basierend auf OpenAPI JSON</li>
+                                <li>Implementierung und Pflege von <span class="nobr">Vale-basierten</span> Style Guides für konsistente Dokumentationsqualität</li>
+                                <li>Erprobung und Implementierung von <span class="nobr">LLM-basierten</span> Tools für <span class="nobr">Content-Erstellung</span>, Zusammenfassungen, Linting und Stilprüfungen sowie <span class="nobr">KI-gestützte</span> Suche und <span class="nobr">Content-Vorschläge</span></li>
+                                <li>Optimierung der Auffindbarkeit von Inhalten: Verantwortung für SEO, Suchfunktionen und interne Verlinkung der Dokumentation mit <span class="nobr">Analytics-gestützter</span> Erfolgsmessung (<span class="nobr">Bounce-Rate</span>, <span class="nobr">Task-Completion-Rate</span>)</li>
                                 <li>Erstellung und Pflege der Knowledge Base (knowledge.uptempo.io) inklusive Release Notes</li>
-                                <li>Durchführung regelmäßiger Content-Audits, Archivierung ungenutzter Seiten</li>
+                                <li>Durchführung regelmäßiger <span class="nobr">Content-Audits</span>, Archivierung ungenutzter Seiten</li>
                                 <li>Onboarding und Wissenstransfer für neue Technical Writer und Product Manager</li>
                                 <li>Enge Zusammenarbeit mit Produktmanagern und Entwicklern zur Planung der Dokumentation für jedes Release und Sicherstellung der pünktlichen Bereitstellung zum Release</li>
-                                <li>Sicherstellung klarer, inklusiver und barrierefreier Dokumentation durch strukturierte Inhalte und Einhaltung von Accessibility-Best-Practices</li>
+                                <li>Sicherstellung klarer, inklusiver und barrierefreier Dokumentation durch strukturierte Inhalte und Einhaltung von <span class="nobr">Accessibility-Best-Practices</span></li>
                             </ul>
                         </div>
                     </div>
@@ -958,11 +973,11 @@
                         </div>
                         <div class="job-description">
                             <ul>
-                                <li>Erstellung umfassender Dokumentation für Marketing Resource Management (MRM) SaaS-Produkte</li>
-                                <li>Implementierung von UI-Key-Variablen für MadCap Flare für höhere Text- und Übersetzungsqualität</li>
+                                <li>Erstellung umfassender Dokumentation für Marketing Resource Management (MRM) <span class="nobr">SaaS-Produkte</span></li>
+                                <li>Implementierung von <span class="nobr">UI-Key-Variablen</span> für MadCap Flare für höhere Text- und Übersetzungsqualität</li>
                                 <li>Zuständigkeit für die Bereiche Terminologie und UX Copy (DE/EN)</li>
                                 <li>Terminologiearbeit und Management von Übersetzungsprojekten zwischen Deutsch und Englisch</li>
-                                <li>Zusammenarbeit mit internationalen Produkt-, Enablement-, QA- und Support-Teams</li>
+                                <li>Zusammenarbeit mit internationalen Produkt-, Enablement-, QA- und <span class="nobr">Support-Teams</span></li>
                             </ul>
                         </div>
                     </div>
@@ -976,7 +991,7 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Technische Dokumentation für Sondermaschinenbau, SPS-Systeme (Siemens TIA) und Medizintechnik</li>
+                            <li>Technische Dokumentation für Sondermaschinenbau, <span class="nobr">SPS-Systeme</span> (Siemens TIA) und Medizintechnik</li>
                             <li>Erstellung von Betriebsanleitungen nach Maschinenrichtlinie 2006/42/EG</li>
                             <li>Dokumentation komplexer technischer Systeme und Prozesse</li>
                         </ul>
@@ -992,8 +1007,8 @@
                     <div class="job-description">
                         <ul>
                             <li>Dokumentation für "AHP Enterprise Cloud" Plattform</li>
-                            <li>Erstellung von Administratoren-Handbüchern und technischen Guides</li>
-                            <li>Zusammenarbeit mit Cloud-Architekten und Entwicklungsteams</li>
+                            <li>Erstellung von <span class="nobr">Administratoren-Handbüchern</span> und technischen Guides</li>
+                            <li>Zusammenarbeit mit <span class="nobr">Cloud-Architekten</span> und Entwicklungsteams</li>
                         </ul>
                     </div>
                 </div>
@@ -1006,10 +1021,10 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Administration der Relativity e-Discovery Software für forensische Datenanalysen</li>
-                            <li>Erstellung komplexer Suchabfragen, Tagging und Batch-Bearbeitung von Dokumenten</li>
-                            <li>Compliance-Prüfung und Filterung sensitiver Inhalte (VS-NfD) vor Datenexporten</li>
-                            <li>Unterstützung bei internationalen Compliance-Projekten in der Luft- und Raumfahrtindustrie</li>
+                            <li>Administration der Relativity <span class="nobr">e-Discovery</span> Software für forensische Datenanalysen</li>
+                            <li>Erstellung komplexer Suchabfragen, Tagging und <span class="nobr">Batch-Bearbeitung</span> von Dokumenten</li>
+                            <li><span class="nobr">Compliance-Prüfung</span> und Filterung sensitiver Inhalte (<span class="nobr">VS-NfD</span>) vor Datenexporten</li>
+                            <li>Unterstützung bei internationalen <span class="nobr">Compliance-Projekten</span> in der Luft- und Raumfahrtindustrie</li>
                         </ul>
                     </div>
                 </div>
@@ -1023,18 +1038,18 @@
                     <div class="job-description">
                         <ul>
                             <li>Erstellung umfassender technischer Dokumentation für ein Enterprise Content Management System</li>
-                            <li>Implementierung und Optimierung von Dokumentations-Workflows</li>
+                            <li>Implementierung und Optimierung von <span class="nobr">Dokumentations-Workflows</span></li>
                             <li>Expertenwissen im Produkt durch intensives Testen aller Prozeduren und Workflows</li>
-                            <li>Direkte Zusammenarbeit mit Scrum-Teams, UX-Experten und Projektmanagern</li>
+                            <li>Direkte Zusammenarbeit mit <span class="nobr">Scrum-Teams</span>, <span class="nobr">UX-Experten</span> und Projektmanagern</li>
                             <li>Führende Rolle bei der Verbesserung der Informationsarchitektur der Dokumentationsseite</li>
-                            <li>Durchführung von Black-Box-, Usability- und User-Acceptance-Tests</li>
+                            <li>Durchführung von Black-Box-, Usability- und <span class="nobr">User-Acceptance-Tests</span></li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="experience-item">
                     <div class="job-header">
-                        <div class="company-name">MACup-Magazin</div>
+                        <div class="company-name"><span class="nobr">MACup-Magazin</span></div>
                         <div class="job-title">Redakteur</div>
                         <div class="job-meta">München | Januar 2009 - Juni 2011</div>
                     </div>
@@ -1042,8 +1057,8 @@
                         <ul>
                             <li>Verantwortlicher Redakteur für "MACup", "iPhone & Co" und "iPad & Co" Magazine</li>
                             <li>Verfassen von Fachartikeln zu macOS, iOS, DTP und Praxiswissen für professionelle Anwender</li>
-                            <li>Durchführung von Hard- und Software-Tests mit detaillierten Analysen</li>
-                            <li>Tägliche Online-News-Berichterstattung und Content-Management</li>
+                            <li>Durchführung von Hard- und <span class="nobr">Software-Tests</span> mit detaillierten Analysen</li>
+                            <li>Tägliche <span class="nobr">Online-News-Berichterstattung</span> und <span class="nobr">Content-Management</span></li>
                             <li>Akquise und Betreuung externer Fachautoren</li>
                             <li>Redaktionelle Qualitätssicherung und Lektorat</li>
                         </ul>
@@ -1054,14 +1069,13 @@
                     <div class="job-header">
                         <div class="company-name">Frühere Stationen</div>
                         <div class="job-title">Verschiedene Positionen</div>
-                        <div class="job-meta">2000 - 2008</div>
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li><strong>Condé Nast Verlag (2007-2008):</strong> Systemadministrator OS X Server, Training und DTP-Support</li>
-                            <li><strong>Greinwalder & Partner (2004-2006):</strong> Druckvorstufe, Lektorat und Qualitätssicherung</li>
-                            <li><strong>Freiberuflich (2002-2004):</strong> Redakteur, Autor und Übersetzer für Fachpublikationen</li>
-                            <li><strong>buecher.de AG (2000-2001):</strong> Online-Redakteur und Content Manager</li>
+                            <li><strong>Condé Nast Verlag:</strong> Systemadministrator OS X Server, Training und <span class="nobr">DTP-Support</span></li>
+                            <li><strong>Greinwalder & Partner:</strong> Druckvorstufe, Lektorat und Qualitätssicherung</li>
+                            <li><strong>Freiberuflich:</strong> Redakteur, Autor und Übersetzer für Fachpublikationen</li>
+                            <li><strong>buecher.de AG:</strong> <span class="nobr">Online-Redakteur</span> und Content Manager</li>
                         </ul>
                     </div>
                 </div>
@@ -1073,13 +1087,13 @@
                 
                 <div class="experience-item">
                     <div class="job-header">
-                        <div class="company-name">EintrachtHeute <span class="job-dept">· App-Entwicklung mit Xcode</span></div>
+                        <div class="company-name">EintrachtHeute <span class="job-dept">· <span class="nobr">App-Entwicklung</span> mit Xcode</span></div>
                         <div class="job-meta">Sommer 2026 | <a href="https://apps.apple.com/de/app/eintrachtheute/id6785388496" style="color: #3d5a4f; font-weight: 600;">Im Apple App Store veröffentlicht ↗</a></div>
                     </div>
                     <div class="job-description">
                         <ul>
                             <li>App zur Spielhistorie von Eintracht Frankfurt (Männer und Frauen, 3.500+ Spiele seit 1960) für iPhone, iPad und Mac</li>
-                            <li>SwiftUI, SwiftData (Spiele, Tore, Sync-Status), Swift Charts, WidgetKit; Daten aus OpenLigaDB, DFB und ESPN, aktualisiert per GitHub Actions; Spieldaten: JSON; Sprachen: DE/EN/FR/TR. Mit Hilfe von Claude.</li>
+                            <li>SwiftUI, SwiftData (Spiele, Tore, <span class="nobr">Sync-Status</span>), Swift Charts, WidgetKit; Daten aus OpenLigaDB, DFB und ESPN, aktualisiert per GitHub Actions; Spieldaten: JSON; Sprachen: DE/EN/FR/TR. Mit Hilfe von Claude.</li>
                         </ul>
                     </div>
                 </div>
@@ -1090,24 +1104,24 @@
                 <h2 class="section-title">Technische Fähigkeiten & Kompetenzen</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <div class="skill-category">Dokumentations-Tools</div>
-                        <div class="skill-items">IntelliJ IDEA, AsciiDoc, MadCap Flare, Writerside, Document360, Crowdin, XML-Editoren, Markdown, Jekyll, Eleventy, Pandoc, Vale</div>
+                        <div class="skill-category"><span class="nobr">Dokumentations-Tools</span></div>
+                        <div class="skill-items">IntelliJ IDEA, AsciiDoc, MadCap Flare, Writerside, Document360, Crowdin, <span class="nobr">XML-Editoren</span>, Markdown, Jekyll, Eleventy, Pandoc, Vale</div>
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Entwicklung & Web</div>
-                        <div class="skill-items">HTML, CSS, JavaScript, Node.js, Python-Scripting, Responsive Design, Claude Code Integration</div>
+                        <div class="skill-items">HTML, CSS, JavaScript, Node.js, <span class="nobr">Python-Scripting</span>, Responsive Design, Claude Code Integration</div>
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Versionskontrolle & CI/CD</div>
-                        <div class="skill-items">Git, GitHub Actions, Workflow-Automatisierung, Docs-as-Code</div>
+                        <div class="skill-items">Git, GitHub Actions, <span class="nobr">Workflow-Automatisierung</span>, <span class="nobr">Docs-as-Code</span></div>
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Lokalisierung & Terminologie</div>
-                        <div class="skill-items">Crowdin Enterprise, KI-gestützte Übersetzung, Translation Memory, Terminologiedatenbanken, Glossarpflege</div>
+                        <div class="skill-items">Crowdin Enterprise, <span class="nobr">KI-gestützte</span> Übersetzung, Translation Memory, Terminologiedatenbanken, Glossarpflege</div>
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Betriebssysteme</div>
-                        <div class="skill-items">Sehr gute Linux- und macOS-CLI-Expertise, Windows PowerShell-Grundlagen</div>
+                        <div class="skill-items">Sehr gute Linux- und <span class="nobr">macOS-CLI-Expertise</span>, Windows <span class="nobr">PowerShell-Grundlagen</span></div>
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Projekt- & Aufgabenmanagement</div>
@@ -1115,7 +1129,7 @@
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Analytics & Metriken</div>
-                        <div class="skill-items">Content-Nutzungsanalysen, ROI-Bewertung technischer Dokumentation</div>
+                        <div class="skill-items"><span class="nobr">Content-Nutzungsanalysen</span>, <span class="nobr">ROI-Bewertung</span> technischer Dokumentation</div>
                     </div>
                 </div>
             </div>
@@ -1126,12 +1140,12 @@
                     <div class="section">
                         <h2 class="section-title">Berufsausbildung & Studium</h2>
                         <div class="education-item">
-                            <div class="job-title">Ludwig-Maximilians-Universität München</div>
-                            <div class="job-meta">Studium Neuere Deutsche Literatur, Anglistik | 1993 - 1998</div>
+                            <div class="job-title"><span class="nobr">Ludwig-Maximilians-Universität</span> München</div>
+                            <div class="job-meta">Studium Neuere Deutsche Literatur, Anglistik</div>
                             <div class="job-meta">Zwischenprüfungen abgelegt, ohne Abschluss</div>
                         </div>
                         <div class="education-item">
-                            <div class="job-title">Sortimentsbuchhändler-Ausbildung</div>
+                            <div class="job-title"><span class="nobr">Sortimentsbuchhändler-Ausbildung</span></div>
                             <div class="job-meta">Abgeschlossene Berufsausbildung IHK</div>
                         </div>
                     </div>
@@ -1141,13 +1155,13 @@
                         <ul class="cert-list">
                             <li><strong>iLife '08 – Kreativität am Mac für alle</strong> (2008)<br>
                                 ISBN 3908497639, Pfäffikon</li>
-                            <li><strong>iTunes-7-Trickkiste</strong> (2007)<br>
-                                E-Book bei eload24.com, Baar</li>
+                            <li><strong><span class="nobr">iTunes-7-Trickkiste</span></strong> (2007)<br>
+                                <span class="nobr">E-Book</span> bei eload24.com, Baar</li>
                             <li><strong>iLife '06</strong> (2006)<br>
                                 ISBN 3908497361, Pfäffikon</li>
-                            <li><strong>Mac OS X 10.4 für Power-User und Administratoren</strong> (2005)<br>
+                            <li><strong>Mac OS X 10.4 für <span class="nobr">Power-User</span> und Administratoren</strong> (2005)<br>
                                 ISBN 3908497213, Pfäffikon</li>
-                            <li><strong>Das Mac OS X-Buch</strong> (2003)<br>
+                            <li><strong>Das Mac OS <span class="nobr">X-Buch</span></strong> (2003)<br>
                                 ISBN 3907020553, Zürich</li>
                             <li><strong>Insiderbuch Photoshop 7</strong> (2003)<br>
                                 Übersetzung und Adaption, ISBN 3907020359, Zürich</li>
@@ -1160,7 +1174,7 @@
                         <h2 class="section-title">Weiterbildung</h2>
                         <div class="job-meta" style="margin-top: -4px; margin-bottom: 6px;">Alle Kurse über LinkedIn Learning</div>
                         <ul class="cert-list">
-                            <li>AI-Driven Software Development with OpenAI's Canvas (2025)</li>
+                            <li><span class="nobr">AI-Driven</span> Software Development with OpenAI's Canvas (2025)</li>
                             <li>The Power of Accurate Prompting with Anthropic's Claude (2024)</li>
                             <li>GitHub Actions with Python: Fundamentals (2024)</li>
                             <li>UX Writing Fundamentals (2023)</li>
